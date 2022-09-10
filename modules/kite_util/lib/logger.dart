@@ -45,6 +45,10 @@ class Log {
     _log('DEBUG', m);
   }
 
+  static void warn(dynamic m) {
+    _log('WARN', m);
+  }
+
   static void error(dynamic m) {
     _log('ERROR', m);
   }
