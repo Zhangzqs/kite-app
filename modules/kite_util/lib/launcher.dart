@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:kite/util/rule.dart';
+import 'rule.dart';
 
 // 返回执行结果，如果false表示失败
 typedef OnLaunchCallback = Future<bool> Function(String);

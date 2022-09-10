@@ -20,9 +20,7 @@ import 'package:catcher/catcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:kite/route.dart';
 import 'package:kite/util/alert_dialog.dart';
-import 'package:kite/util/launcher.dart';
 import 'package:kite_util/kite_util.dart';
-import 'package:kite/util/rule.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:url_launcher/url_launcher.dart';
 
