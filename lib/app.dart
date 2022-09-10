@@ -32,20 +32,24 @@ import 'global/global.dart';
 import 'storage/init.dart';
 import 'util/logger.dart';
 
+abstract class KiteModule {}
+
 const title = '上应小风筝';
 
 class KiteApp extends StatelessWidget {
   const KiteApp({Key? key}) : super(key: key);
 
+  static final IRouteGenerator routeGenerator = RouteGeneratorImpl();
+
   Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
       builder: (context) {
-        final builder = RouteTable.get(settings.name!);
+        final routeName = settings.name ?? 'Unknown';
         final args = settings.arguments as Map<String, dynamic>? ?? {};
         final argsJson = jsonEncode(args);
-        Log.info('跳转路由: ${settings.name}, 参数: $argsJson');
-        Global.pageLogger.page(settings.name ?? 'Unknown', argsJson);
-        return builder!(context, args);
+        Log.info('跳转路由: $routeName, 参数: $argsJson');
+        Global.pageLogger.page(routeName, argsJson);
+        return routeGenerator.onGenerateRoute(routeName, args)(context);
       },
       settings: settings,
     );
