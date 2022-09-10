@@ -18,11 +18,10 @@
 
 import 'dart:convert';
 
-import 'package:kite/abstract/abstract_service.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/feature/freshman/dao.dart';
 import 'package:kite/feature/freshman/entity.dart';
 import 'package:kite/mock/index.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 class FreshmanService extends AService implements FreshmanDao {
   FreshmanService(super.session);

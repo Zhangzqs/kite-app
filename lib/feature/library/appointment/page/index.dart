@@ -55,7 +55,7 @@ class TodayTomorrowSwitch extends StatelessWidget {
   Widget buildTomorrowWidget() {
     final DateTime today = DateTime.now();
     final tomorrow = today.add(const Duration(days: 1));
-    final tomorrowWeekText = '周' + _weekText.substring(tomorrow.weekday - 1, tomorrow.weekday);
+    final tomorrowWeekText = '周${_weekText.substring(tomorrow.weekday - 1, tomorrow.weekday)}';
     final tomorrowDateText = '${tomorrow.month}-${tomorrow.day}';
     return Text(
       '明天\n'
@@ -69,12 +69,12 @@ class TodayTomorrowSwitch extends StatelessWidget {
     return MultiButtonSwitch(
       children: [
         Container(
-          child: buildTodayWidget(),
           margin: const EdgeInsets.symmetric(vertical: 8),
+          child: buildTodayWidget(),
         ),
         Container(
-          child: buildTomorrowWidget(),
           margin: const EdgeInsets.symmetric(vertical: 8),
+          child: buildTomorrowWidget(),
         ),
       ],
       onSwitch: (i) {

@@ -18,9 +18,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:kite/feature/board/entity.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
-import '../../abstract/abstract_service.dart';
-import '../../abstract/abstract_session.dart';
 import 'dao.dart';
 
 class BoardService extends AService implements BoardDao {

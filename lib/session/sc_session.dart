@@ -16,7 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import '../abstract/abstract_session.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
+
 import '../util/logger.dart';
 
 class ScSession extends ISession {

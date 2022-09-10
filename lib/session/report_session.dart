@@ -19,10 +19,9 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/storage/init.dart';
-
-import 'dio_common.dart';
+import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 class ReportSession extends ISession {
   final Dio dio;

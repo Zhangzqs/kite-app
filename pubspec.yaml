@@ -112,6 +112,9 @@ dependencies:
   # Desktop support
   window_manager: ^0.2.0
 
+  kite_request_interface: { path: modules/kite_request_interface }
+  kite_request_dio_adapter: { path: modules/kite_request_dio_adapter }
+
 
 dev_dependencies:
   flutter_test: { sdk: flutter }

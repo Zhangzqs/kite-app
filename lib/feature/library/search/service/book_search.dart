@@ -16,8 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:beautiful_soup_dart/beautiful_soup.dart';
-import 'package:kite/abstract/abstract_service.dart';
-import 'package:kite/abstract/abstract_session.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 import '../dao/book_search.dart';
 import '../entity/book_search.dart';

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:kite/abstract/abstract_session.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 extension RequestMethodEnumToString on RequestMethod {
   String toUpperCaseString() {

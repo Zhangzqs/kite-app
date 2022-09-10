@@ -17,8 +17,8 @@
  */
 
 import 'package:hive/hive.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/feature/edu/timetable/storage.dart';
+import 'package:kite_request_interface/abstract_session.dart';
 
 import 'cache.dart';
 import 'timetable.dart';

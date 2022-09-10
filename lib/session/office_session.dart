@@ -19,10 +19,9 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/exception/session.dart';
-
-import 'dio_common.dart';
+import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 /// 应网办登录地址, POST 请求
 const String _officeLoginUrl = 'https://xgfy.sit.edu.cn/unifri-flow/login';

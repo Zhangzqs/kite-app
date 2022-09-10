@@ -19,11 +19,10 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/logger.dart';
-
-import 'dio_common.dart';
+import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 class SitAppSession implements ISession {
   final Dio dio;

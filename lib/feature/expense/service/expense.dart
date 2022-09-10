@@ -17,9 +17,8 @@
  */
 import 'package:beautiful_soup_dart/beautiful_soup.dart';
 import 'package:enough_convert/enough_convert.dart';
-import 'package:kite/abstract/abstract_service.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/util/date_format.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 import '../dao/expense.dart';
 import '../entity/expense.dart';

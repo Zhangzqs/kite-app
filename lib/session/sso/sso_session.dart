@@ -21,12 +21,12 @@ import 'dart:typed_data';
 import 'package:beautiful_soup_dart/beautiful_soup.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart' hide Lock;
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/exception/session.dart';
 import 'package:kite/feature/kite/service/ocr.dart';
-import 'package:kite/session/dio_common.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/logger.dart';
+import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 import 'package:synchronized/synchronized.dart';
 
 import '../../util/dio_utils.dart';

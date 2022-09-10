@@ -16,10 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:kite/abstract/abstract_service.dart';
-import 'package:kite/abstract/abstract_session.dart';
-
-import '../dao/join.dart';
+import 'package:kite/feature/activity/dao/join.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 class ScJoinActivityService extends AService implements ScJoinActivityDao {
   static const _applyCheck = 'http://sc.sit.edu.cn/public/pcenter/check.action?activityId=';

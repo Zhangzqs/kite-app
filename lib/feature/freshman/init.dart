@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:kite/abstract/abstract_session.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 import 'package:kite/storage/init.dart';
 
 import '../../session/freshman_session.dart';

@@ -893,6 +893,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.4.7"
+  kite_request_dio_adapter:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_request_dio_adapter"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_request_interface:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_request_interface"
+      relative: true
+    source: path
+    version: "0.0.1"
   lint:
     dependency: transitive
     description:
@@ -1718,5 +1732,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.17.0 <3.0.0"
+  dart: ">=2.17.6 <3.0.0"
   flutter: ">=3.0.1"

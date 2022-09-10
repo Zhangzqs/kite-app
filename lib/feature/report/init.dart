@@ -17,8 +17,8 @@
  */
 
 import 'package:dio/dio.dart';
-import 'package:kite/abstract/abstract_session.dart';
 import 'package:kite/util/hive_register_adapter.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 import '../../session/report_session.dart';
 import 'dao/report.dart';

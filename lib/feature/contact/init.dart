@@ -17,7 +17,7 @@
  */
 
 import 'package:hive/hive.dart';
-import 'package:kite/abstract/abstract_session.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 import 'dao/contact.dart';
 import 'entity/contact.dart';

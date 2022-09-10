@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:flutter/material.dart';
+import 'package:kite/component/chart.dart';
 
-import '../../../../component/chart.dart';
 import '../../../../component/future_builder.dart';
 import '../../entity/electricity.dart';
 import '../../init.dart';

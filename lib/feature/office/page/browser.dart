@@ -17,9 +17,9 @@
  */
 import 'package:flutter/material.dart';
 import 'package:kite/component/future_builder.dart';
+import 'package:kite/component/platform_widget.dart';
 import 'package:kite/component/unsupported_platform_launch.dart';
 import 'package:kite/util/cookie_util.dart';
-import 'package:universal_platform/universal_platform.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../init.dart';
@@ -36,21 +36,22 @@ class BrowserPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(functionName),
       ),
-      body: UniversalPlatform.isDesktopOrWeb
-          ? const UnsupportedPlatformUrlLauncher(
-              'http://ywb.sit.edu.cn/v1/#/',
-              tip: '电脑端请连接校园网后在下方的浏览器中启动网页版',
-            )
-          : MyFutureBuilder<List<WebViewCookie>>(
-              future: OfficeInitializer.cookieJar.loadAsWebViewCookie(Uri.parse('http://xgfy.sit.edu.cn/unifri-flow/')),
-              builder: (context, data) {
-                print(data);
-                return WebView(
-                  initialUrl: url,
-                  initialCookies: data,
-                );
-              },
-            ),
+      body: MyPlatformWidget(
+        desktopOrWebBuilder: (context) => const UnsupportedPlatformUrlLauncher(
+          'http://ywb.sit.edu.cn/v1/#/',
+          tip: '电脑端请连接校园网后在下方的浏览器中启动网页版',
+        ),
+        otherBuilder: (context) => MyFutureBuilder<List<WebViewCookie>>(
+          future: OfficeInitializer.cookieJar.loadAsWebViewCookie(Uri.parse('http://xgfy.sit.edu.cn/unifri-flow/')),
+          builder: (context, data) {
+            print(data);
+            return WebView(
+              initialUrl: url,
+              initialCookies: data,
+            );
+          },
+        ),
+      ),
     );
   }
 }
