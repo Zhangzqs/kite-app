@@ -23,7 +23,6 @@ import 'package:kite/component/future_builder.dart';
 import 'package:kite/component/platform_widget.dart';
 import 'package:kite/util/url_launcher.dart';
 import 'package:kite_util/kite_util.dart';
-import 'package:kite_util/rule.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'unsupported_platform_launch.dart';

@@ -25,7 +25,7 @@ import 'package:kite/component/webview.dart';
 import 'package:kite/component/webview_page.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/alert_dialog.dart';
-import 'package:kite_util/rule.dart';
+import 'package:kite_util/kite_util.dart';
 
 const _reportUrlPrefix = 'http://xgfy.sit.edu.cn/h5/#/';
 const _reportUrlIndex = '${_reportUrlPrefix}pages/index/index';

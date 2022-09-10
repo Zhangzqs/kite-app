@@ -1,7 +1,7 @@
 library kite_feature_interface;
 
 import 'package:flutter/widgets.dart';
-import 'package:kite_util/kite_util.dart';
+import 'package:kite_util_logger/kite_util_logger.dart';
 
 abstract class IRouteGenerator {
   // 判定该路由生成器是否能够生成指定路由名的路由

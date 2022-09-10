@@ -17,7 +17,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:kite/util/event_bus.dart';
+import 'package:kite_event_bus/kite_event_bus.dart';
 import 'package:window_manager/window_manager.dart';
 
 enum WindowEvent {

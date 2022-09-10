@@ -1,3 +1,5 @@
+library kite_util_launcher;
+
 /*
  * 上应小风筝  便利校园，一步到位
  * Copyright (C) 2022 上海应用技术大学 上应小风筝团队
@@ -16,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'rule.dart';
+import 'package:kite_util_rule/kite_util_rule.dart';
 
 // 返回执行结果，如果false表示失败
 typedef OnLaunchCallback = Future<bool> Function(String);

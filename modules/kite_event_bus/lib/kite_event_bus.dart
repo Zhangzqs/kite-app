@@ -1,3 +1,5 @@
+library kite_event_bus;
+
 /*
  * 上应小风筝  便利校园，一步到位
  * Copyright (C) 2022 上海应用技术大学 上应小风筝团队
@@ -48,7 +50,7 @@ class EventBus<E> {
   }
 
   /// 判定订阅者是否存在
-  bool contain<T>(E eventName, [EventCallback<T>? f]) {
+  bool contains<T>(E eventName, [EventCallback<T>? f]) {
     // 获取队列，若该事件不存在，那直接退出函数
     final list = _eventMap[eventName];
     if (list == null) {

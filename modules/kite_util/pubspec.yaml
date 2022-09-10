@@ -1,6 +1,7 @@
 name: kite_util
 description: A new Flutter package project.
 version: 0.0.1
+homepage:
 
 environment:
   sdk: ">=2.17.6 <3.0.0"
@@ -10,9 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  intl: ^0.17.0               # i18n & l10n
+  kite_util_launcher: { path: ../kite_util_launcher }
+  kite_util_logger: { path: ../kite_util_logger }
+  kite_util_rule: { path: ../kite_util_rule }
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+flutter:

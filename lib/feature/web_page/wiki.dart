@@ -22,7 +22,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kite/component/webview.dart';
 import 'package:kite/component/webview_page.dart';
-import 'package:kite_util/rule.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 const String _defaultWikiUrl = 'https://kite.sunnysab.cn/wiki/';

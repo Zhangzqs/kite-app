@@ -67,7 +67,7 @@ class _HomeBackgroundState extends State<HomeBackground> {
     Future.delayed(
       const Duration(milliseconds: 500),
       () {
-        if (!DesktopInitializer.eventBus.contain(WindowEvent.onWindowResize, _onWindowResize)) {
+        if (!DesktopInitializer.eventBus.contains(WindowEvent.onWindowResize, _onWindowResize)) {
           return;
         }
         setState(() {});

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kite_feature_interface/kite_feature_interface.dart';
-import 'package:kite_util/kite_util.dart';
+import 'package:kite_util_logger/kite_util_logger.dart';
 
 class A extends AKiteFeature {
   A(super.parent);

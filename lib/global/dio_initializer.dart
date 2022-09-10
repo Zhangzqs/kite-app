@@ -23,7 +23,6 @@ import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:fk_user_agent/fk_user_agent.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite_util/kite_util.dart';
-import 'package:kite_util/rule.dart';
 
 const String _defaultUaString = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0';
 

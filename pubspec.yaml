@@ -116,7 +116,7 @@ dependencies:
   kite_request_dio_adapter: { path: modules/kite_request_dio_adapter }
   kite_util: { path: modules/kite_util }
   flutter_settings_screens_hive_adapter: { path: modules/flutter_settings_screens_hive_adapter }
-
+  kite_event_bus: { path: modules/kite_event_bus }
 
 dev_dependencies:
   flutter_test: { sdk: flutter }
