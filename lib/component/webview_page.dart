@@ -20,7 +20,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:kite/component/webview.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 

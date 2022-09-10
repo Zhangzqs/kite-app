@@ -23,7 +23,7 @@ import 'package:kite/component/future_builder.dart';
 import 'package:kite/feature/contact/entity/contact.dart';
 import 'package:kite/feature/library/search/entity/search_history.dart';
 import 'package:kite/util/alert_dialog.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 class SimpleInputDialog {
   final BuildContext context;

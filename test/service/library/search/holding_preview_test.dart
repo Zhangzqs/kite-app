@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kite/feature/initializer_index.dart';
 import 'package:kite/feature/library/search/init.dart';
 import 'package:kite/feature/library/search/service/holding_preview.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 void main() {
   test('test holding previews', () async {

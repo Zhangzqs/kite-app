@@ -18,7 +18,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:kite/feature/edu/timetable/cache.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 import '../../entity.dart';
 import 'daily.dart';

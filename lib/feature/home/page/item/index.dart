@@ -21,7 +21,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kite/feature/home/page/item/electricity.dart';
 import 'package:kite/launch.dart';
 import 'package:kite/route.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/scanner.dart';
 import 'package:universal_platform/universal_platform.dart';
 

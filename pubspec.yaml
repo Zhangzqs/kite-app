@@ -114,6 +114,7 @@ dependencies:
 
   kite_request_interface: { path: modules/kite_request_interface }
   kite_request_dio_adapter: { path: modules/kite_request_dio_adapter }
+  kite_util: { path: modules/kite_util }
 
 
 dev_dependencies:

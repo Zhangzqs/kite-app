@@ -18,9 +18,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:kite/component/webview_page.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-
-import 'logger.dart';
 
 Future<void> launchUrlInBrowser(String url) async {
   Log.info('启动浏览器打开页面：$url');

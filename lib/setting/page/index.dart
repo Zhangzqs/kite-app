@@ -33,7 +33,7 @@ import 'package:kite/storage/storage/admin.dart';
 import 'package:kite/storage/storage/develop.dart';
 import 'package:kite/util/file.dart';
 import 'package:kite/util/flash.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/user.dart';
 import 'package:kite/util/validation.dart';
 import 'package:path_provider/path_provider.dart';

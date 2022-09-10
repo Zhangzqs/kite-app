@@ -19,7 +19,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:kite/launch.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 class MyHtmlWidget extends StatefulWidget {
   final String html;

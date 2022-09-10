@@ -17,7 +17,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:kite/launch.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/scanner.dart';
 import 'package:quick_actions/quick_actions.dart';
 

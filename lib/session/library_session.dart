@@ -22,7 +22,7 @@ import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:kite/exception/session.dart';
 import 'package:kite/util/dio_utils.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
 

@@ -27,7 +27,7 @@ import 'config.dart';
 // 导出一些测试环境下常用的东西
 export 'package:flutter_test/flutter_test.dart';
 export 'package:kite/global/dio_initializer.dart';
-export 'package:kite/util/logger.dart';
+export 'package:kite_util/kite_util.dart';
 
 export 'config.dart';
 

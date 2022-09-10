@@ -20,7 +20,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:kite/component/html_widget.dart';
 import 'package:kite/util/flash.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/url_launcher.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';

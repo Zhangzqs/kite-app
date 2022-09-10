@@ -20,10 +20,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kite/launch.dart';
 import 'package:kite/storage/init.dart';
+import 'package:kite_util/kite_util.dart';
 
 import '../../../route.dart';
 import '../../../util/flash.dart';
-import '../../../util/logger.dart';
 import '../dao.dart';
 import '../init.dart';
 

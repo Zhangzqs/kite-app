@@ -18,12 +18,12 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:uuid/uuid.dart';
 
 import '../feature/user_event/dao.dart';
 import '../feature/user_event/entity.dart';
 import '../feature/user_event/init.dart';
-import 'logger.dart';
 
 const String reportEventUrl = 'https://kite.sunnysab.cn/api/v2/report/event';
 const int maxCacheSize = 10;

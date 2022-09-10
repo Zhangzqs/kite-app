@@ -28,7 +28,7 @@ import 'package:kite/launch.dart';
 import 'package:kite/route.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/flash.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/scanner.dart';
 import 'package:kite/util/user.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';

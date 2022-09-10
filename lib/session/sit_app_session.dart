@@ -20,7 +20,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:kite/storage/init.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
 

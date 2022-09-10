@@ -17,7 +17,7 @@
  */
 
 import 'package:kite/storage/init.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
 
 class FreshmanSession extends ISession {

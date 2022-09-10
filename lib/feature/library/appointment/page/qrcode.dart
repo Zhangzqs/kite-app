@@ -24,7 +24,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:kite/feature/library/appointment/entity.dart';
 import 'package:kite/feature/library/appointment/init.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class TimeDisplay extends StatefulWidget {

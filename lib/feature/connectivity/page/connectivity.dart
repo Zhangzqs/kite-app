@@ -21,7 +21,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kite/launch.dart';
 import 'package:kite/storage/init.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 import '../init.dart';
 import '../service/network.dart';

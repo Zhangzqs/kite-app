@@ -19,7 +19,7 @@
 import 'package:flutter/material.dart';
 import 'package:kite/component/webview_page.dart';
 import 'package:kite/storage/init.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/user.dart';
 
 const _bbsUrl = 'https://support.qq.com/products/386124';

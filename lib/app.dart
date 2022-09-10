@@ -26,11 +26,11 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kite/route.dart';
 import 'package:kite/util/user.dart';
+import 'package:kite_util/kite_util.dart';
 
 import 'feature/page_index.dart';
 import 'global/global.dart';
 import 'storage/init.dart';
-import 'util/logger.dart';
 
 abstract class KiteModule {}
 

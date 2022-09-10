@@ -17,9 +17,8 @@
  */
 
 import 'package:cookie_jar/cookie_jar.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-import 'logger.dart';
 
 extension ConvertAsWebViewCookie on CookieJar {
   Future<List<WebViewCookie>> loadAsWebViewCookie(Uri uri) async {

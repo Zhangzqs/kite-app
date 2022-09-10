@@ -17,7 +17,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:kite/util/flash.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 import '../../entity/book_search.dart';
 import '../../init.dart';

@@ -17,8 +17,7 @@
  */
 
 import 'package:kite_request_interface/kite_request_interface.dart';
-
-import '../util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 class ScSession extends ISession {
   final ISession _session;

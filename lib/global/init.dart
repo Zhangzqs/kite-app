@@ -26,7 +26,7 @@ import 'package:kite/session/kite_session.dart';
 import 'package:kite/session/sit_app_session.dart';
 import 'package:kite/setting/init.dart';
 import 'package:kite/storage/init.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 import 'hive_initializer.dart';

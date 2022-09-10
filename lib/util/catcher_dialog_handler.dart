@@ -5,9 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kite/launch.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/alert_dialog.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:stack_trace/stack_trace.dart';
-
-import 'logger.dart';
 
 class DialogHandler extends ReportHandler {
   @override

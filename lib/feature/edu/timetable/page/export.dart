@@ -7,7 +7,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kite/feature/edu/timetable/entity.dart';
 import 'package:kite/util/alert_dialog.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/url_launcher.dart';
 
 import '../util.dart';

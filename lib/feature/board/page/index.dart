@@ -27,7 +27,7 @@ import 'package:kite/feature/board/init.dart';
 import 'package:kite/feature/board/service.dart';
 import 'package:kite/util/file.dart';
 import 'package:kite/util/kite_authorization.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/user.dart';
 
 import '../entity.dart';

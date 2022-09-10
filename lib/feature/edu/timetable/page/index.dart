@@ -25,7 +25,7 @@ import 'package:kite/route.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/alert_dialog.dart';
 import 'package:kite/util/flash.dart';
-import 'package:kite/util/logger.dart';
+import 'package:kite_util/kite_util.dart';
 
 import '../entity.dart';
 
