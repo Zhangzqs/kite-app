@@ -580,6 +580,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.3.3-null-safety+2"
+  flutter_settings_screens_hive_adapter:
+    dependency: "direct main"
+    description:
+      path: "modules/flutter_settings_screens_hive_adapter"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter_spinkit:
     dependency: transitive
     description:

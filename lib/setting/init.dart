@@ -17,8 +17,8 @@
  */
 
 import 'package:flutter_settings_screens/flutter_settings_screens.dart';
+import 'package:flutter_settings_screens_hive_adapter/flutter_settings_screens_hive_adapter.dart';
 import 'package:hive/hive.dart';
-import 'package:kite/util/hive_cache_provider.dart';
 
 class SettingInitializer {
   static void init({

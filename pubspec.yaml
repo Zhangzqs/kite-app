@@ -115,6 +115,7 @@ dependencies:
   kite_request_interface: { path: modules/kite_request_interface }
   kite_request_dio_adapter: { path: modules/kite_request_dio_adapter }
   kite_util: { path: modules/kite_util }
+  flutter_settings_screens_hive_adapter: { path: modules/flutter_settings_screens_hive_adapter }
 
 
 dev_dependencies:
