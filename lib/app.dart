@@ -32,14 +32,12 @@ import 'feature/page_index.dart';
 import 'global/global.dart';
 import 'storage/init.dart';
 
-abstract class KiteModule {}
-
 const title = '上应小风筝';
 
 class KiteApp extends StatelessWidget {
   const KiteApp({Key? key}) : super(key: key);
 
-  static final IRouteGenerator routeGenerator = RouteGeneratorImpl();
+  static final routeGenerator = RouteGeneratorImpl();
 
   Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(

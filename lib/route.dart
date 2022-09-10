@@ -77,11 +77,7 @@ class RouteTable {
   static const board = '/board';
 }
 
-abstract class IRouteGenerator {
-  WidgetBuilder onGenerateRoute(String routeName, Map<String, dynamic> arguments);
-}
-
-class RouteGeneratorImpl implements IRouteGenerator {
+class RouteGeneratorImpl {
   static final Map<String, NamedRouteBuilder> routeTable = {
     RouteTable.home: (context, args) => const HomePage(),
     RouteTable.report: (context, args) => const DailyReportPage(),
@@ -127,7 +123,7 @@ class RouteGeneratorImpl implements IRouteGenerator {
     RouteTable.freshmanFriend: (context, args) => const FreshmanFriendPage(),
     RouteTable.board: (context, args) => const BoardPage(),
   };
-  @override
+
   WidgetBuilder onGenerateRoute(String routeName, Map<String, dynamic> arguments) {
     return (context) {
       final builder = routeTable[routeName];
@@ -135,4 +131,6 @@ class RouteGeneratorImpl implements IRouteGenerator {
       return builder(context, arguments);
     };
   }
+
+  bool accept(String routeName) => routeTable.containsKey(routeName);
 }
