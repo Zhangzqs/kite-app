@@ -108,9 +108,9 @@ class DefaultDioSession with MyDioDownloaderMixin implements ISession {
       url,
       queryParameters: queryParameters,
       data: data,
-      options: options?.toDioOptions().copyWith(
-            method: method.name.toUpperCase(),
-          ),
+      options: (options?.toDioOptions() ?? Options()).copyWith(
+        method: method.name.toUpperCase(),
+      ),
     );
     return response.toMyResponse();
   }
