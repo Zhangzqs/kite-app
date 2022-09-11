@@ -1,6 +1,4 @@
 name: kite_request_interface
-description: A new Flutter package project.
-version: 0.0.1
 publish_to: none
 
 environment:
