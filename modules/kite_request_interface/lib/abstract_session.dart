@@ -86,3 +86,7 @@ abstract class IDownloader {
     MyOptions? options,
   });
 }
+
+abstract class IConnectivityChecker {
+  Future<bool> check();
+}

@@ -20,8 +20,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:kite/component/html_widget.dart';
 import 'package:kite/util/flash.dart';
-import 'package:kite_util/kite_util.dart';
 import 'package:kite/util/url_launcher.dart';
+import 'package:kite_util/kite_util.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -62,7 +62,7 @@ class _DetailPageState extends State<DetailPage> {
     Log.info('下载到：$targetPath');
     // 如果文件不存在，那么下载文件
     if (!await File(targetPath).exists()) {
-      await BulletinInitializer.session.download(
+      await BulletinInitializer.downloader.download(
         attachment.url,
         savePath: targetPath,
         onReceiveProgress: (int count, int total) {

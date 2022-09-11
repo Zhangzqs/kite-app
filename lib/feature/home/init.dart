@@ -17,7 +17,7 @@
  */
 
 import 'package:kite/feature/kite/notice/dao.dart';
-import 'package:kite/session/sso/index.dart';
+import 'package:kite_sit_sso_session/sso_session.dart';
 
 class HomeInitializer {
   static late SsoSession ssoSession;

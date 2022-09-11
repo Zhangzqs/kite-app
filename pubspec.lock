@@ -914,6 +914,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  kite_ocr:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_ocr"
+      relative: true
+    source: path
+    version: "0.0.0"
   kite_request_dio_adapter:
     dependency: "direct main"
     description:
@@ -925,6 +932,20 @@ packages:
     dependency: "direct main"
     description:
       path: "modules/kite_request_interface"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_library_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_library_session"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_sso_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_sso_session"
       relative: true
     source: path
     version: "0.0.0"

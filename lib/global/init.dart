@@ -60,9 +60,9 @@ class Initializer {
     // ??= 表示为空时候才赋值
     KvStorageInitializer.home.installTime ??= DateTime.now();
 
-    BulletinInitializer.init(ssoSession: Global.ssoSession);
+    BulletinInitializer.init(ssoSession: Global.ssoSession, downloader: Global.ssoSession);
     CampusCardInitializer.init(session: Global.ssoSession);
-    ConnectivityInitializer.init(ssoSession: Global.ssoSession);
+    ConnectivityInitializer.init(checker: Global.ssoSession);
 
     final kiteSession = KiteSession(
       Global.dio,

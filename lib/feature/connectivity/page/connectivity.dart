@@ -40,7 +40,7 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
   void initState() {
     super.initState();
 
-    checkConnectivityFuture = ConnectivityInitializer.ssoSession.checkConnectivity().then((value) {
+    checkConnectivityFuture = ConnectivityInitializer.checker.check().then((value) {
       Log.info('当前是否连接校园网：$value');
       if (!mounted) return;
       setState(() => isConnected = value);

@@ -33,7 +33,7 @@ import 'encryption.dart';
 typedef SsoSessionErrorCallback = void Function(Object e, StackTrace t);
 typedef SsoSessionLoginSuccessfulCallback = void Function(String username, String password);
 
-class SsoSession with MyDioDownloaderMixin implements ISession {
+class SsoSession with MyDioDownloaderMixin implements ISession, IConnectivityChecker {
   static const int _maxRetryCount = 5;
   static const String _authServerUrl = 'https://authserver.sit.edu.cn/authserver';
   static const String _loginUrl = '$_authServerUrl/login';
@@ -71,7 +71,7 @@ class SsoSession with MyDioDownloaderMixin implements ISession {
     required this.cookieJar,
     this.onError,
     required this.ocr,
-    required this.onLoginSuccessful,
+    this.onLoginSuccessful,
   });
 
   Future<void> runWithNoErrorCallback(Future<void> Function() callback) async {
@@ -80,27 +80,6 @@ class SsoSession with MyDioDownloaderMixin implements ISession {
       await callback();
     } finally {
       enableSsoErrorCallback = true;
-    }
-  }
-
-  Future<bool> checkConnectivity({
-    String url = 'http://jwxt.sit.edu.cn/',
-  }) async {
-    try {
-      await runWithNoErrorCallback(() async {
-        await _dioRequest(
-          url,
-          'GET',
-          options: Options(
-            contentType: Headers.formUrlEncodedContentType,
-            followRedirects: false,
-            validateStatus: (status) => status! < 400,
-          ),
-        );
-      });
-      return true;
-    } catch (e) {
-      return false;
     }
   }
 
@@ -382,5 +361,31 @@ class SsoSession with MyDioDownloaderMixin implements ISession {
       onReceiveProgress: onReceiveProgress,
     );
     return response.toMyResponse();
+  }
+
+  @override
+  Future<bool> check() {
+    Future<bool> checkConnectivity({
+      String url = 'http://jwxt.sit.edu.cn/',
+    }) async {
+      try {
+        await runWithNoErrorCallback(() async {
+          await _dioRequest(
+            url,
+            'GET',
+            options: Options(
+              contentType: Headers.formUrlEncodedContentType,
+              followRedirects: false,
+              validateStatus: (status) => status! < 400,
+            ),
+          );
+        });
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    return checkConnectivity();
   }
 }

@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
         Navigator.of(context).pushNamed(RouteTable.timetable);
       }
       // 非新生才执行该网络检查逻辑
-      if (!isFreshman && await HomeInitializer.ssoSession.checkConnectivity()) {
+      if (!isFreshman && await HomeInitializer.ssoSession.check()) {
         showBasicFlash(
           context,
           const Text('当前已连接校园网环境'),

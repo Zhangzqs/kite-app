@@ -1,4 +1,4 @@
-name: kite_sit_sso_session
+name: kite_sit_library_session
 publish_to: none
 
 environment:
@@ -8,12 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio_cookie_manager: ^2.0.0
-  cookie_jar: ^3.0.1
-  synchronized: ^3.0.0+2        # lock
   encrypt: ^5.0.1             # Encryption (AES)
-  beautiful_soup_dart: ^0.3.0 # HTML parser
-  kite_ocr: { path: ../kite_ocr }
+  crypto: ^3.0.1              # Hash (MD5)
   dio: ^4.0.4
   kite_util: { path: ../kite_util }
   kite_request_interface: { path: ../kite_request_interface }

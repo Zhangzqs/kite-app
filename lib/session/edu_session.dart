@@ -15,9 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import 'package:kite/session/sso/index.dart';
-import 'package:kite_util/kite_util.dart';
+
 import 'package:kite_request_interface/kite_request_interface.dart';
+import 'package:kite_sit_sso_session/sso_session.dart';
+import 'package:kite_util/kite_util.dart';
 
 class EduSession extends ISession {
   final SsoSession ssoSession;

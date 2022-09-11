@@ -16,12 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:kite/session/sso/index.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 class ConnectivityInitializer {
-  static late SsoSession ssoSession;
+  static late IConnectivityChecker checker;
 
-  static void init({required SsoSession ssoSession}) {
-    ConnectivityInitializer.ssoSession = ssoSession;
+  static void init({required IConnectivityChecker checker}) {
+    ConnectivityInitializer.checker = checker;
   }
 }

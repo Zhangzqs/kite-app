@@ -117,6 +117,9 @@ dependencies:
   flutter_settings_screens_hive_adapter: { path: modules/flutter_settings_screens_hive_adapter }
   kite_event_bus: { path: modules/kite_event_bus }
   kite_exception: { path: modules/kite_exception }
+  kite_sit_sso_session: { path: modules/kite_sit_sso_session }
+  kite_ocr: { path: modules/kite_ocr }
+  kite_sit_library_session: { path: modules/kite_sit_library_session }
 
 dev_dependencies:
   flutter_test: { sdk: flutter }

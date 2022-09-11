@@ -16,17 +16,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:kite/session/sso/sso_session.dart';
+import 'package:kite_request_interface/kite_request_interface.dart';
 
 import 'dao.dart';
 import 'service.dart';
 
 class BulletinInitializer {
   static late BulletinDao bulletin;
-  static late SsoSession session;
+  static late ISession session;
+  static late IDownloader downloader;
 
-  static void init({required SsoSession ssoSession}) {
+  static void init({
+    required ISession ssoSession,
+    required IDownloader downloader,
+  }) {
     BulletinInitializer.session = ssoSession;
+    BulletinInitializer.downloader = downloader;
     bulletin = BulletinService(session);
   }
 }

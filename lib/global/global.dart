@@ -24,11 +24,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kite/global/cookie_initializer.dart';
 import 'package:kite/global/dio_initializer.dart';
-import 'package:kite/session/sso/index.dart';
 import 'package:kite/storage/dao/index.dart';
+import 'package:kite/storage/init.dart';
 import 'package:kite/util/alert_dialog.dart';
 import 'package:kite/util/page_logger.dart';
 import 'package:kite_event_bus/kite_event_bus.dart';
+import 'package:kite_ocr/kite_ocr.dart';
+import 'package:kite_request_dio_adapter/adapter.dart';
+import 'package:kite_sit_sso_session/sso_session.dart';
 
 import '../feature/user_event/dao.dart';
 
@@ -58,6 +61,7 @@ class Global {
   static late Dio dio2; // 消费查询专用连接池(因为需要修改连接超时)
   static late SsoSession ssoSession;
   static late SsoSession ssoSession2;
+  static late OcrService ocrService;
 
   // 是否正处于网络错误对话框
   static bool inSsoErrorDialog = false;
@@ -105,8 +109,29 @@ class Global {
         ..sendTimeout = 30 * 1000
         ..receiveTimeout = 30 * 1000,
     );
-    ssoSession = SsoSession(dio: dio, cookieJar: cookieJar, onError: onSsoError);
-    ssoSession2 = SsoSession(dio: dio2, cookieJar: cookieJar, onError: onSsoError);
+    ocrService = OcrService(DefaultDioSession(dio));
+    ssoSession = SsoSession(
+      dio: dio,
+      cookieJar: cookieJar,
+      ocr: ocrService,
+      onError: onSsoError,
+      onLoginSuccessful: (u, p) {
+        KvStorageInitializer.auth
+          ..currentUsername = u
+          ..ssoPassword = p;
+      },
+    );
+    ssoSession2 = SsoSession(
+      dio: dio2,
+      cookieJar: cookieJar,
+      ocr: ocrService,
+      onError: onSsoError,
+      onLoginSuccessful: (u, p) {
+        KvStorageInitializer.auth
+          ..currentUsername = u
+          ..ssoPassword = p;
+      },
+    );
     pageLogger = PageLogger(dio: dio, userEventStorage: userEventStorage);
     pageLogger.startup();
 

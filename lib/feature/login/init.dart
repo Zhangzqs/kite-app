@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'package:kite/session/sso/index.dart';
+import 'package:kite_sit_sso_session/sso_session.dart';
 
 import 'service/authserver.dart';
 

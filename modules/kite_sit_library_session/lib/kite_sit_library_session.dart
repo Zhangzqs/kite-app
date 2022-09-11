@@ -1,3 +1,5 @@
+library kite_sit_library_session;
+
 /*
  * 上应小风筝  便利校园，一步到位
  * Copyright (C) 2022 上海应用技术大学 上应小风筝团队
@@ -20,7 +22,6 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';
-import 'package:kite/util/dio_utils.dart';
 import 'package:kite_exception/kite_exception.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
