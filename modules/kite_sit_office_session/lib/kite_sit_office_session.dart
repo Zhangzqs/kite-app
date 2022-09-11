@@ -1,41 +1,29 @@
-/*
- * 上应小风筝  便利校园，一步到位
- * Copyright (C) 2022 上海应用技术大学 上应小风筝团队
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+library kite_sit_office_session;
+
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:kite/feature/office/init.dart';
-import 'package:kite/storage/init.dart';
 import 'package:kite_exception/kite_exception.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
+import 'package:kite_storage_auth_interface/kite_storage_auth_interface.dart';
+import 'package:kite_storage_jwt_interface/kite_storage_jwt_interface.dart';
 
 /// 应网办登录地址, POST 请求
 const String _officeLoginUrl = 'https://xgfy.sit.edu.cn/unifri-flow/login';
 
 class OfficeSession extends ISession {
   bool isLogin = false;
-  String? username;
-  String? jwtToken;
+
+  JwtDao jwtDao;
+  AuthStorageDao authDao;
   final Dio dio;
 
   OfficeSession({
     required this.dio,
+    required this.jwtDao,
+    required this.authDao,
   });
 
   Future<void> login({
@@ -52,8 +40,7 @@ class OfficeSession extends ISession {
       final String errMessage = (response.data as Map)['msg'];
       throw CredentialsInvalidException(msg: '($code) $errMessage');
     }
-    jwtToken = ((response.data as Map)['data'])['authorization'];
-    this.username = username;
+    jwtDao.jwtToken = ((response.data as Map)['data'])['authorization'];
     isLogin = true;
   }
 
@@ -76,10 +63,10 @@ class OfficeSession extends ISession {
     MyProgressCallback? onSendProgress,
     MyProgressCallback? onReceiveProgress,
   }) async {
-    if (!OfficeInitializer.session.isLogin) {
-      final username = KvStorageInitializer.auth.currentUsername!;
-      final password = KvStorageInitializer.auth.ssoPassword!;
-      await OfficeInitializer.session.login(
+    if (!isLogin) {
+      final username = authDao.currentUsername!;
+      final password = authDao.ssoPassword!;
+      await login(
         username: username,
         password: password,
       );
@@ -93,7 +80,7 @@ class OfficeSession extends ISession {
     final Map<String, dynamic> newHeaders = {
       'timestamp': ts,
       'signature': sign,
-      'Authorization': jwtToken,
+      'Authorization': jwtDao.jwtToken,
     };
 
     newOptions.headers == null ? newOptions.headers = newHeaders : newOptions.headers?.addAll(newHeaders);
