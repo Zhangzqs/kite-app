@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  kite: { path: ../kite_request_interface }
+  kite_request_interface: { path: ../kite_request_interface }
 
 dev_dependencies:
   flutter_test:

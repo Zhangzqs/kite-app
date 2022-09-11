@@ -935,6 +935,13 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
+  kite_util_dio:
+    dependency: transitive
+    description:
+      path: "modules/kite_util_dio"
+      relative: true
+    source: path
+    version: "0.0.0"
   kite_util_launcher:
     dependency: transitive
     description:
@@ -1501,7 +1508,7 @@ packages:
     source: hosted
     version: "1.1.0"
   synchronized:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: synchronized
       url: "https://pub.flutter-io.cn"

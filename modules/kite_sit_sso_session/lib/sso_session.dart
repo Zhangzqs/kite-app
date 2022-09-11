@@ -21,18 +21,17 @@ import 'dart:typed_data';
 import 'package:beautiful_soup_dart/beautiful_soup.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart' hide Lock;
-import 'package:kite/feature/kite/service/ocr.dart';
-import 'package:kite/storage/init.dart';
 import 'package:kite_exception/kite_exception.dart';
+import 'package:kite_ocr/kite_ocr.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
 import 'package:kite_util/kite_util.dart';
 import 'package:synchronized/synchronized.dart';
 
-import '../../util/dio_utils.dart';
 import 'encryption.dart';
 
 typedef SsoSessionErrorCallback = void Function(Object e, StackTrace t);
+typedef SsoSessionLoginSuccessfulCallback = void Function(String username, String password);
 
 class SsoSession with MyDioDownloaderMixin implements ISession {
   static const int _maxRetryCount = 5;
@@ -57,16 +56,22 @@ class SsoSession with MyDioDownloaderMixin implements ISession {
 
   /// Session错误拦截器
   SsoSessionErrorCallback? onError;
+  SsoSessionLoginSuccessfulCallback? onLoginSuccessful;
 
   bool enableSsoErrorCallback = true;
 
   /// 惰性登录锁
   final loginLock = Lock();
 
+  /// OCR 服务
+  OcrService ocr;
+
   SsoSession({
     required this.dio,
     required this.cookieJar,
     this.onError,
+    required this.ocr,
+    required this.onLoginSuccessful,
   });
 
   Future<void> runWithNoErrorCallback(Future<void> Function() callback) async {
@@ -231,7 +236,9 @@ class SsoSession with MyDioDownloaderMixin implements ISession {
     isOnline = true;
     _username = username;
     _password = password;
-    KvStorageInitializer.loginTime.sso = DateTime.now();
+
+    if (onLoginSuccessful != null) onLoginSuccessful!(username, password);
+
     return response;
   }
 
@@ -315,7 +322,7 @@ class SsoSession with MyDioDownloaderMixin implements ISession {
       // 如果不是4，那就再试一次
       do {
         final captchaImage = await _getCaptcha();
-        captcha = await OcrServer.recognize(captchaImage);
+        captcha = await ocr.recognize(captchaImage);
         debug('识别验证码结果: $captcha');
       } while (captcha.length != 4);
     }
