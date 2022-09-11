@@ -1,4 +1,4 @@
-part of 'kite_feature_interface.dart';
+part of 'kite_feature_base.dart';
 
 class FeatureParameterList extends SplayTreeMap<String, dynamic> {
   AKiteFeature feature;

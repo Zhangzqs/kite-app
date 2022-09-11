@@ -1,6 +1,4 @@
-name: kite_feature_interface
-description: A new Flutter package project.
-version: 0.0.1
+name: kite_feature_base
 publish_to: none
 
 environment:
@@ -16,5 +14,3 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
-flutter:

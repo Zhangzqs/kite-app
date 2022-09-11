@@ -1,4 +1,4 @@
-library kite_feature_interface;
+library kite_feature_base;
 
 import 'dart:collection';
 

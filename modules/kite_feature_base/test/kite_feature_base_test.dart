@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kite_feature_interface/kite_feature_interface.dart';
+import 'package:kite_feature_base/kite_feature_base.dart';
 import 'package:kite_util_logger/kite_util_logger.dart';
 
 class A extends AKiteFeature {
