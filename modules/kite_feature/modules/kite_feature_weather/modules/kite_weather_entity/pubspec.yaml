@@ -11,3 +11,6 @@ dependencies:
   json_annotation: ^4.6.0     # JSON code generation
   hive: ^2.0.5
   kite_hive_type_id_pool: { path: ../../../../../kite_hive_type_id_pool }
+
+dev_dependencies:
+  build_runner: ^2.2.0
