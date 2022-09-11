@@ -9,10 +9,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  kite_util_launcher: { path: ../kite_util_launcher }
-  kite_util_logger: { path: ../kite_util_logger }
-  kite_util_rule: { path: ../kite_util_rule }
-  kite_util_dio: { path: ../kite_util_dio }
+  kite_util_launcher: { path: modules/kite_util_launcher }
+  kite_util_logger: { path: modules/kite_util_logger }
+  kite_util_rule: { path: modules/kite_util_rule }
+  kite_util_dio: { path: modules/kite_util_dio }
 
 dev_dependencies:
   flutter_test:

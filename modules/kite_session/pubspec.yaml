@@ -14,7 +14,7 @@ dependencies:
   kite_request_interface: { path: ../kite_request_interface }
   kite_user_entity: { path: ../kite_user_entity }
   kite_request_dio_adapter: { path: ../kite_request_dio_adapter }
-  kite_util_logger: { path: ../kite_util_logger }
+  kite_util: { path: ../kite_util }
 
   dio: ^4.0.4
 
