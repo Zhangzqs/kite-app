@@ -36,8 +36,7 @@ jobs:
 
       - name: 📌 Flutter Code Generate
         run: |
-          flutter pub get
-          flutter pub run build_runner build --delete-conflicting-outputs
+          dart run run_build_runner.dart
           flutter pub run flutter_native_splash:create
 
       - name: 📌 Cache pub
@@ -163,7 +162,7 @@ jobs:
 
       - run: flutter config --enable-windows-desktop
       - run: flutter pub get
-      - run: flutter pub run build_runner build --delete-conflicting-outputs
+      - run: dart run run_build_runner.dart
       - run: flutter build windows
 
   # 临时关闭Linux平台的Action
