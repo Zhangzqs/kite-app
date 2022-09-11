@@ -1,0 +1,47 @@
+library kite_feature_route_table;
+
+class RouteTable {
+  static const home = '/home';
+  static const report = '/report';
+  static const login = '/login';
+  static const welcome = '/welcome';
+  static const about = '/about';
+  static const expense = '/expense';
+  static const connectivity = '/connectivity';
+  static const campusCard = '/campusCard';
+  static const electricity = '/electricity';
+  static const score = '/score';
+  static const office = '/office';
+  static const game = '/game';
+  static const game2048 = '$game/2048';
+  static const gameWordle = '$game/wordle';
+  static const gameComposeSit = '$game/composeSit';
+  static const gameTetris = '$game/tetris';
+  static const wiki = '/wiki';
+  static const library = '/library';
+  static const libraryAppointment = '$library/appointment';
+  static const market = '/market';
+  static const timetable = '/timetable';
+  static const timetableImport = '$timetable/import';
+  static const setting = '/setting';
+  static const feedback = '/feedback';
+  static const notice = '/notice';
+  static const contact = '/contact';
+  static const bulletin = '/bulletin';
+  static const mail = '/mail';
+  static const night = '/night';
+  static const event = '/event';
+  static const lostFound = '/lostFound';
+  static const classroom = '/classroom';
+  static const exam = '/exam';
+  static const egg = '/egg';
+  static const bbs = '/bbs';
+  static const scanner = '/scanner';
+  static const browser = '/browser';
+  static const freshman = '/freshman';
+  static const freshmanLogin = '$freshman/login';
+  static const freshmanUpdate = '$freshman/update';
+  static const freshmanAnalysis = '$freshman/analysis';
+  static const freshmanFriend = '$freshman/friend';
+  static const board = '/board';
+}

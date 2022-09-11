@@ -1,0 +1,16 @@
+name: kite_feature_welcome
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  kite_feature_route_table: { path: ../../../kite_feature_route_table }
+  flutter_screenutil: ^5.5.2              # Screen adaptation
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+export '../../modules/kite_feature/modules/kite_feature_welcome/lib/welcome.dart';
 export 'activity/page/index.dart';
 export 'bulletin/page/index.dart';
 export 'campus_card/page/campus_card.dart';
@@ -46,4 +47,3 @@ export 'web_page/about.dart';
 export 'web_page/bbs.dart';
 export 'web_page/feedback.dart';
 export 'web_page/wiki.dart';
-export 'welcome/page/welcome.dart';
