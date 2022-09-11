@@ -22,6 +22,7 @@ import 'package:catcher/catcher.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kite/route.dart';
+import 'package:kite_feature_route_table/kite_feature_route_table.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 typedef MyWidgetBuilder<T> = Widget Function(BuildContext context, T data);

@@ -26,6 +26,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kite/route.dart';
 import 'package:kite/util/user.dart';
+import 'package:kite_feature_welcome/page.dart';
 import 'package:kite_util/kite_util.dart';
 
 import 'feature/page_index.dart';

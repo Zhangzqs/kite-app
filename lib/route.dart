@@ -20,6 +20,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:kite/feature/board/page/index.dart';
 import 'package:kite/feature/freshman/page/login.dart';
 import 'package:kite/feature/web_page/browser.dart';
+import 'package:kite_feature_route_table/kite_feature_route_table.dart';
+import 'package:kite_feature_welcome/page.dart';
 
 import 'feature/freshman/page/analysis.dart';
 import 'feature/freshman/page/friend/index.dart';
@@ -28,6 +30,8 @@ import 'feature/freshman/page/update.dart';
 import 'feature/game/page/tetris/index.dart';
 import 'feature/page_index.dart';
 import 'setting/page/index.dart';
+
+export 'package:kite_feature_route_table/kite_feature_route_table.dart';
 
 typedef NamedRouteBuilder = Widget Function(BuildContext context, Map<String, dynamic> args);
 

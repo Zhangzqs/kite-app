@@ -132,6 +132,8 @@ dependencies:
   kite_feature_weather: { path: modules/kite_feature/modules/kite_feature_weather }
   kite_hive_type_id_pool: { path: modules/kite_hive_type_id_pool }
 
+  kite_feature_route_table: { path: modules/kite_feature_route_table }
+  kite_feature_welcome: {path: modules/kite_feature/modules/kite_feature_welcome }
 
 
 dev_dependencies:
