@@ -17,7 +17,7 @@
  */
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:kite/global/hive_type_id_pool.dart';
+import 'package:kite_hive_type_id_pool/kite_hive_type_id_pool.dart';
 
 part 'entity.g.dart';
 

@@ -1,6 +1,6 @@
-import 'package:kite/common/entity/kite_user.dart';
+import 'package:kite_storage_interface/kite_storage_interface.dart';
+import 'package:kite_user_entity/kite_user_entity.dart';
 
-import '../dao/kite.dart';
 import 'common.dart';
 
 class KiteStorageKeys {

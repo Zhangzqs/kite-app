@@ -17,4 +17,3 @@
  */
 
 export 'electricity.dart';
-export 'weather.dart';

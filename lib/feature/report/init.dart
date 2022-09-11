@@ -17,10 +17,11 @@
  */
 
 import 'package:dio/dio.dart';
+import 'package:kite/storage/init.dart';
 import 'package:kite/util/hive_register_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
+import 'package:kite_sit_report_session/kite_sit_report_session.dart';
 
-import '../../session/report_session.dart';
 import 'dao/report.dart';
 import 'entity/report.dart';
 import 'service/index.dart';
@@ -33,7 +34,10 @@ class ReportInitializer {
     required Dio dio,
   }) {
     registerAdapter(ReportHistoryAdapter());
-    session = ReportSession(dio: dio);
+    session = ReportSession(
+      dio: dio,
+      usernameGetter: () => KvStorageInitializer.auth.currentUsername!,
+    );
     reportService = ReportService(session);
   }
 }

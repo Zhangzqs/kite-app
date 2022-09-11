@@ -18,10 +18,17 @@
 
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
+import 'package:kite/storage/init.dart';
+import 'package:kite_sit_office_session/kite_sit_office_session.dart';
+import 'package:kite_storage_interface/kite_storage_interface.dart';
 
-import '../../session/office_session.dart';
 import 'service/function.dart';
 import 'service/message.dart';
+
+class OfficeJwtStorage implements JwtDao {
+  @override
+  String? jwtToken;
+}
 
 class OfficeInitializer {
   static late CookieJar cookieJar;
@@ -34,7 +41,11 @@ class OfficeInitializer {
     required CookieJar cookieJar,
   }) async {
     OfficeInitializer.cookieJar = cookieJar;
-    session = OfficeSession(dio: dio);
+    session = OfficeSession(
+      dio: dio,
+      jwtDao: OfficeJwtStorage(),
+      authDao: KvStorageInitializer.auth,
+    );
 
     OfficeInitializer.functionService = OfficeFunctionService(session);
     OfficeInitializer.messageService = OfficeMessageService(session);

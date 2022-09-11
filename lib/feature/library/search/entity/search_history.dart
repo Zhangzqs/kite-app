@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:hive/hive.dart';
-import 'package:kite/global/hive_type_id_pool.dart';
+import 'package:kite_hive_type_id_pool/kite_hive_type_id_pool.dart';
 
 part 'search_history.g.dart';
 

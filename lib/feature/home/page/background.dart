@@ -22,11 +22,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_weather_bg_null_safety/bg/weather_bg.dart';
 import 'package:flutter_weather_bg_null_safety/utils/weather_type.dart';
-import 'package:kite/feature/kite/entity/weather.dart';
 import 'package:kite/global/desktop_initializer.dart';
 import 'package:kite/global/global.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/flash.dart';
+import 'package:kite_feature_weather/kite_feature_weather.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 class HomeBackground extends StatefulWidget {

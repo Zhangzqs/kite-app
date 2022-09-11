@@ -19,8 +19,8 @@
 import 'dart:collection';
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:kite/global/hive_type_id_pool.dart';
 import 'package:kite/util/user.dart';
+import 'package:kite_hive_type_id_pool/kite_hive_type_id_pool.dart';
 
 part 'home.g.dart';
 

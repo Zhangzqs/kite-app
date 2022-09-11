@@ -17,8 +17,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-
-import '../dao/theme.dart';
+import 'package:kite_storage_interface/theme.dart';
 
 class ThemeKeys {
   static const namespace = '/theme';

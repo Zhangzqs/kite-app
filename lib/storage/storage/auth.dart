@@ -16,8 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:hive/hive.dart';
-
-import '../dao/auth.dart';
+import 'package:kite_storage_interface/kite_storage_interface.dart';
 
 class AuthKeys {
   static const namespace = '/auth';
@@ -25,12 +24,13 @@ class AuthKeys {
   static const ssoPassword = '$namespace/ssoPassword';
   static const personName = '$namespace/personName';
   static const userType = '$namespace/userType';
+  static const lastLogin = '$namespace/lastLogin';
 }
 
-class AuthSettingStorage implements AuthSettingDao {
+class AuthStorage implements AuthStorageDao {
   final Box<dynamic> box;
 
-  AuthSettingStorage(this.box);
+  AuthStorage(this.box);
 
   @override
   String? get currentUsername => box.get(AuthKeys.currentUsername);
@@ -49,4 +49,10 @@ class AuthSettingStorage implements AuthSettingDao {
 
   @override
   set personName(String? foo) => box.put(AuthKeys.personName, foo);
+
+  @override
+  DateTime? get lastLogin => box.get(AuthKeys.lastLogin);
+
+  @override
+  set lastLogin(DateTime? foo) => box.put(AuthKeys.lastLogin, foo);
 }

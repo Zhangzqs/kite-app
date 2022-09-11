@@ -24,7 +24,6 @@ import 'expense/entity/expense.dart';
 import 'game/entity.dart';
 import 'home/entity/home.dart';
 import 'kite/entity/electricity.dart';
-import 'kite/entity/weather.dart';
 import 'library/search/entity/search_history.dart';
 import 'report/entity/report.dart';
 import 'user_event/entity.dart';
@@ -55,7 +54,6 @@ void registerAdapters() {
   registerAdapter(GameRecordAdapter());
   registerAdapter(FunctionTypeAdapter());
   registerAdapter(BalanceAdapter());
-  registerAdapter(WeatherAdapter());
   registerAdapter(ReportHistoryAdapter());
   registerAdapter(LibrarySearchHistoryItemAdapter());
   registerAdapter(UserEventAdapter());

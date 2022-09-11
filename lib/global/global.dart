@@ -24,7 +24,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kite/global/cookie_initializer.dart';
 import 'package:kite/global/dio_initializer.dart';
-import 'package:kite/storage/dao/index.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/alert_dialog.dart';
 import 'package:kite/util/page_logger.dart';
@@ -32,6 +31,7 @@ import 'package:kite_event_bus/kite_event_bus.dart';
 import 'package:kite_ocr/kite_ocr.dart';
 import 'package:kite_request_dio_adapter/adapter.dart';
 import 'package:kite_sit_sso_session/sso_session.dart';
+import 'package:kite_storage_interface/kite_storage_interface.dart';
 
 import '../feature/user_event/dao.dart';
 
@@ -90,7 +90,7 @@ class Global {
 
   static Future<void> init({
     required UserEventStorageDao userEventStorage,
-    required AuthSettingDao authSetting,
+    required AuthStorageDao authSetting,
   }) async {
     cookieJar = await CookieInitializer.init();
     dio = await DioInitializer.init(

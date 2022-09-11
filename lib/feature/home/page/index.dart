@@ -19,7 +19,7 @@ import 'package:catcher/catcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kite/feature/kite/service/weather.dart';
+import 'package:kite/feature/initializer_index.dart';
 import 'package:kite/feature/login/init.dart';
 import 'package:kite/feature/quick_button/init.dart';
 import 'package:kite/global/global.dart';
@@ -30,6 +30,7 @@ import 'package:kite/util/flash.dart';
 import 'package:kite/util/scanner.dart';
 import 'package:kite/util/user.dart';
 import 'package:kite_exception/kite_exception.dart';
+import 'package:kite_feature_weather/kite_feature_weather.dart';
 import 'package:kite_util/kite_util.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:universal_platform/universal_platform.dart';
@@ -59,7 +60,8 @@ class _HomePageState extends State<HomePage> {
     Log.info('更新天气');
     Future.delayed(const Duration(milliseconds: 800), () async {
       try {
-        final weather = await WeatherService().getCurrentWeather(KvStorageInitializer.home.campus);
+        final weather =
+            await WeatherService(KiteInitializer.kiteSession).getCurrentWeather(KvStorageInitializer.home.campus);
         Global.eventBus.emit(EventNameConstants.onWeatherUpdate, weather);
       } catch (_) {}
     });

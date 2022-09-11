@@ -22,10 +22,10 @@ import 'package:kite/feature/initializer_index.dart';
 import 'package:kite/feature/sit_app/init.dart';
 import 'package:kite/global/desktop_initializer.dart';
 import 'package:kite/global/global.dart';
-import 'package:kite/session/kite_session.dart';
-import 'package:kite/session/sit_app_session.dart';
 import 'package:kite/setting/init.dart';
 import 'package:kite/storage/init.dart';
+import 'package:kite_session/kite_session.dart';
+import 'package:kite_sit_app_session/kite_sit_app_session.dart';
 import 'package:kite_util/kite_util.dart';
 import 'package:universal_platform/universal_platform.dart';
 
@@ -65,9 +65,10 @@ class Initializer {
     ConnectivityInitializer.init(checker: Global.ssoSession);
 
     final kiteSession = KiteSession(
-      Global.dio,
-      KvStorageInitializer.jwt,
-      KvStorageInitializer.kite,
+      dio: Global.dio,
+      jwtDao: KvStorageInitializer.jwt,
+      kiteDao: KvStorageInitializer.kite,
+      authDao: KvStorageInitializer.auth,
     );
     await ContactInitializer.init(
       kiteSession: kiteSession,
@@ -111,8 +112,9 @@ class Initializer {
     await FreshmanInitializer.init(kiteSession: kiteSession);
 
     final sitAppSession = SitAppSession(
-      Global.dio,
-      KvStorageInitializer.sitAppJwt,
+      dio: Global.dio,
+      jwtDao: KvStorageInitializer.sitAppJwt,
+      authDao: KvStorageInitializer.auth,
     );
     SitAppInitializer.init(sitAppSession: sitAppSession);
     BoardInitializer.init(kiteSession: kiteSession);

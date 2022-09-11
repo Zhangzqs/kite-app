@@ -17,7 +17,7 @@
  */
 
 import 'package:hive/hive.dart';
-import 'package:kite/storage/dao/admin.dart';
+import 'package:kite_storage_interface/admin.dart';
 
 class AdminKeys {
   static const namespace = '/admin';

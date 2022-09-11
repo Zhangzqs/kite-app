@@ -117,9 +117,22 @@ dependencies:
   flutter_settings_screens_hive_adapter: { path: modules/flutter_settings_screens_hive_adapter }
   kite_event_bus: { path: modules/kite_event_bus }
   kite_exception: { path: modules/kite_exception }
-  kite_sit_sso_session: { path: modules/kite_sit_sso_session }
   kite_ocr: { path: modules/kite_ocr }
+  kite_storage_interface: { path: modules/kite_storage_interface }
+
+  kite_session: { path: modules/kite_session }
+  kite_user_entity: { path: modules/kite_user_entity }
+  kite_sit_edu_session: { path: modules/kite_sit_edu_session }
+  kite_sit_app_session: { path: modules/kite_sit_app_session }
   kite_sit_library_session: { path: modules/kite_sit_library_session }
+  kite_sit_office_session: { path: modules/kite_sit_office_session }
+  kite_sit_report_session: { path: modules/kite_sit_report_session }
+  kite_sit_sc_session: { path: modules/kite_sit_sc_session }
+  kite_sit_sso_session: { path: modules/kite_sit_sso_session }
+  kite_feature_weather: { path: modules/kite_feature/modules/kite_feature_weather }
+  kite_hive_type_id_pool: { path: modules/kite_hive_type_id_pool }
+
+
 
 dev_dependencies:
   flutter_test: { sdk: flutter }

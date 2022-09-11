@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:hive/hive.dart';
-import 'package:kite/storage/dao/develop.dart';
+import 'package:kite_storage_interface/develop.dart';
 
 class DevelopOptionsKeys {
   static const namespace = '/developOptions';

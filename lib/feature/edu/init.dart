@@ -21,9 +21,8 @@ import 'package:hive/hive.dart';
 import 'package:kite/feature/edu/exam/init.dart';
 import 'package:kite/feature/edu/score/init.dart';
 import 'package:kite/feature/edu/timetable/init.dart';
+import 'package:kite_sit_edu_session/kite_sit_edu_session.dart';
 import 'package:kite_sit_sso_session/sso_session.dart';
-
-import '../../session/edu_session.dart';
 
 class EduInitializer {
   static late CookieJar cookieJar;

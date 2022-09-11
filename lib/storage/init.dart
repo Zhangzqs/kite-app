@@ -17,30 +17,26 @@
  */
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:kite/storage/dao/admin.dart';
-import 'package:kite/storage/dao/develop.dart';
-import 'package:kite/storage/dao/kite.dart';
+import 'package:kite/storage/dao/home.dart';
 import 'package:kite/storage/storage/admin.dart';
 import 'package:kite/storage/storage/develop.dart';
 import 'package:kite/storage/storage/kite.dart';
 import 'package:kite/storage/storage/report.dart';
+import 'package:kite_storage_interface/kite_storage_interface.dart';
 
-import 'dao/index.dart';
-import 'dao/report.dart';
+import 'dao/freshman.dart';
 import 'storage/index.dart';
 
-export 'dao/index.dart';
 export 'storage/index.dart';
 
 class KvStorageInitializer {
   static late ThemeSettingDao theme;
-  static late AuthSettingDao auth;
+  static late AuthStorageDao auth;
   static late AdminSettingDao admin;
   static late NetworkSettingDao network;
   static late JwtDao jwt;
   static late JwtDao sitAppJwt;
   static late HomeSettingDao home;
-  static late LoginTimeDao loginTime;
   static late FreshmanCacheDao freshman;
   static late DevelopOptionsDao developOptions;
   static late ReportStorageDao report;
@@ -52,14 +48,13 @@ class KvStorageInitializer {
     required Box<dynamic> kvStorageBox,
   }) async {
     KvStorageInitializer.kvStorageBox = kvStorageBox;
-    auth = AuthSettingStorage(kvStorageBox);
+    auth = AuthStorage(kvStorageBox);
     admin = AdminSettingStorage(kvStorageBox);
     home = HomeSettingStorage(kvStorageBox);
     theme = ThemeSettingStorage(kvStorageBox);
     network = NetworkSettingStorage(kvStorageBox);
     jwt = JwtStorage(kvStorageBox);
     sitAppJwt = SitAppJwtStorage(kvStorageBox);
-    loginTime = LoginTimeStorage(kvStorageBox);
     freshman = FreshmanCacheStorage(kvStorageBox);
     developOptions = DevelopOptionsStorage(kvStorageBox);
     report = ReportStorage(kvStorageBox);

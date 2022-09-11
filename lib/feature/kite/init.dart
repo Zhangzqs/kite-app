@@ -17,9 +17,10 @@
  */
 
 import 'package:hive/hive.dart';
-import 'package:kite/session/kite_session.dart';
+import 'package:kite_session/kite_session.dart';
 
-import 'dao/index.dart';
+import 'dao/classroom.dart';
+import 'dao/electricity.dart';
 import 'notice/dao.dart';
 import 'notice/service.dart';
 import 'service/classroom.dart';
@@ -28,7 +29,6 @@ import 'storage/electricity.dart';
 
 class KiteInitializer {
   static late ElectricityStorageDao electricityStorage;
-  static late WeatherDao weatherService;
 
   static late ClassroomRemoteDao classroomService;
   static late ElectricityServiceDao electricityService;
@@ -46,6 +46,5 @@ class KiteInitializer {
     noticeService = NoticeService(kiteSession);
 
     electricityStorage = ElectricityStorage(electricityBox);
-    weatherService = WeatherService();
   }
 }

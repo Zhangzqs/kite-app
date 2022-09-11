@@ -17,8 +17,8 @@
  */
 import 'package:kite/feature/home/entity/home.dart';
 import 'package:kite/feature/kite/entity/electricity.dart';
-import 'package:kite/feature/kite/entity/weather.dart';
 import 'package:kite/feature/report/entity/report.dart';
+import 'package:kite_feature_weather/kite_feature_weather.dart';
 
 abstract class HomeSettingDao {
   int get campus; // 校区

@@ -16,8 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:hive/hive.dart';
-
-import '../dao/jwt.dart';
+import 'package:kite_storage_interface/kite_storage_interface.dart';
 
 class JwtKeys {
   static const namespace = '/kite';

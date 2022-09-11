@@ -18,7 +18,7 @@
 
 import 'package:kite/feature/freshman/dao.dart';
 import 'package:kite/feature/freshman/entity.dart';
-import 'package:kite/storage/init.dart';
+import 'package:kite/storage/dao/freshman.dart';
 
 class FreshmanCacheManager {
   final FreshmanCacheDao freshmanCacheDao;

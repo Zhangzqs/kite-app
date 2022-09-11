@@ -18,7 +18,7 @@
 
 import 'package:kite/feature/library/appointment/dao.dart';
 import 'package:kite/feature/library/appointment/service.dart';
-import 'package:kite/session/kite_session.dart';
+import 'package:kite_session/kite_session.dart';
 
 class LibraryAppointmentInitializer {
   static late KiteSession kiteSession;

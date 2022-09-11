@@ -1,5 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:kite/storage/dao/report.dart';
+import 'package:kite_storage_interface/report.dart';
 
 class ReportKeys {
   static const namespace = '/report';

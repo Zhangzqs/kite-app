@@ -15,15 +15,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:kite_hive_type_id_pool/kite_hive_type_id_pool.dart';
 
 part 'weather.g.dart';
 
 @JsonSerializable()
-class Weather {
+@HiveType(typeId: HiveTypeIdPool.weatherItem)
+class Weather extends HiveObject {
+  @HiveField(0)
   String weather;
+  @HiveField(1)
   int temperature;
+  @HiveField(2)
   String ts;
+  @HiveField(3)
   String icon;
 
   Weather(this.weather, this.temperature, this.ts, this.icon);
@@ -33,7 +40,6 @@ class Weather {
   }
 
   factory Weather.fromJson(Map<String, dynamic> json) => _$WeatherFromJson(json);
-  Map<String, dynamic> toJson() => _$WeatherToJson(this);
 
   @override
   String toString() {

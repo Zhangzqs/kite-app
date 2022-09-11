@@ -19,7 +19,7 @@
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
 import 'package:kite/feature/library/appointment/init.dart';
-import 'package:kite/session/kite_session.dart';
+import 'package:kite_session/kite_session.dart';
 
 import 'search/entity/search_history.dart';
 import 'search/init.dart';

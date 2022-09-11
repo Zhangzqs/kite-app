@@ -7,14 +7,28 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "47.0.0"
+    version: "46.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "4.7.0"
+    version: "4.6.0"
+  analyzer_plugin:
+    dependency: transitive
+    description:
+      name: analyzer_plugin
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.10.0"
+  ansicolor:
+    dependency: transitive
+    description:
+      name: ansicolor
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.1"
   app_settings:
     dependency: "direct main"
     description:
@@ -49,7 +63,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.8.2"
+    version: "2.9.0"
   audio_session:
     dependency: transitive
     description:
@@ -189,21 +203,21 @@ packages:
       name: cached_network_image
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.2.1"
+    version: "3.2.2"
   cached_network_image_platform_interface:
     dependency: transitive
     description:
       name: cached_network_image_platform_interface
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.0"
+    version: "2.0.0"
   cached_network_image_web:
     dependency: transitive
     description:
       name: cached_network_image_web
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   catcher:
     dependency: "direct main"
     description:
@@ -217,14 +231,7 @@ packages:
       name: characters
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0"
-  charcode:
-    dependency: transitive
-    description:
-      name: charcode
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.3.1"
+    version: "1.2.1"
   check_vpn_connection:
     dependency: "direct main"
     description:
@@ -245,14 +252,14 @@ packages:
       name: chewie
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.3.4"
+    version: "1.3.5"
   clock:
     dependency: transitive
     description:
       name: clock
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   code_builder:
     dependency: transitive
     description:
@@ -309,6 +316,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.5"
+  dart_code_metrics:
+    dependency: transitive
+    description:
+      name: dart_code_metrics
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "4.17.1"
   dart_style:
     dependency: transitive
     description:
@@ -441,7 +455,7 @@ packages:
       name: fake_async
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.3.0"
+    version: "1.3.1"
   ffi:
     dependency: transitive
     description:
@@ -544,7 +558,7 @@ packages:
       name: flutter_native_splash
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.2.8"
+    version: "2.2.9"
   flutter_phoenix:
     dependency: "direct main"
     description:
@@ -607,7 +621,7 @@ packages:
       name: flutter_svg
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.4"
+    version: "1.1.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -652,7 +666,7 @@ packages:
       name: format
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -701,7 +715,7 @@ packages:
       name: fwfh_text_style
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.22.08"
+    version: "2.22.08+1"
   fwfh_url_launcher:
     dependency: transitive
     description:
@@ -822,7 +836,7 @@ packages:
       name: image_picker_android
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.8.5+2"
+    version: "0.8.5+3"
   image_picker_for_web:
     dependency: transitive
     description:
@@ -914,6 +928,20 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  kite_feature_weather:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_feature/modules/kite_feature_weather"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_hive_type_id_pool:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_hive_type_id_pool"
+      relative: true
+    source: path
+    version: "0.0.1"
   kite_ocr:
     dependency: "direct main"
     description:
@@ -935,10 +963,52 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
+  kite_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_session"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_app_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_app_session"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_edu_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_edu_session"
+      relative: true
+    source: path
+    version: "0.0.0"
   kite_sit_library_session:
     dependency: "direct main"
     description:
       path: "modules/kite_sit_library_session"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_office_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_office_session"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_report_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_report_session"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_sc_session:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_sit_sc_session"
       relative: true
     source: path
     version: "0.0.0"
@@ -949,6 +1019,41 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
+  kite_storage_auth_interface:
+    dependency: transitive
+    description:
+      path: "modules/kite_storage_interface/modules/kite_storage_auth_interface"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_storage_interface:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_storage_interface"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_storage_jwt_interface:
+    dependency: transitive
+    description:
+      path: "modules/kite_storage_interface/modules/kite_storage_jwt_interface"
+      relative: true
+    source: path
+    version: "0.0.1"
+  kite_storage_kite_interface:
+    dependency: transitive
+    description:
+      path: "modules/kite_storage_interface/modules/kite_storage_kite_interface"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_user_entity:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_user_entity"
+      relative: true
+    source: path
+    version: "0.0.1"
   kite_util:
     dependency: "direct main"
     description:
@@ -981,6 +1086,27 @@ packages:
     dependency: transitive
     description:
       path: "modules/kite_util_rule"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_weather_entity:
+    dependency: transitive
+    description:
+      path: "modules/kite_feature/modules/kite_feature_weather/modules/kite_weather_entity"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_weather_service_impl:
+    dependency: transitive
+    description:
+      path: "modules/kite_feature/modules/kite_feature_weather/modules/kite_weather_service_impl"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_weather_service_interface:
+    dependency: transitive
+    description:
+      path: "modules/kite_feature/modules/kite_feature_weather/modules/kite_weather_service_interface"
       relative: true
     source: path
     version: "0.0.0"
@@ -1025,21 +1151,21 @@ packages:
       name: matcher
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.12.11"
+    version: "0.12.12"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.5"
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.7.0"
+    version: "1.8.0"
   mime:
     dependency: transitive
     description:
@@ -1144,7 +1270,7 @@ packages:
       name: path
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   path_drawing:
     dependency: transitive
     description:
@@ -1284,7 +1410,7 @@ packages:
       name: pointycastle
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.6.1"
+    version: "3.6.2"
   pool:
     dependency: transitive
     description:
@@ -1382,7 +1508,7 @@ packages:
       name: screen_retriever
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.3"
   sentry:
     dependency: transitive
     description:
@@ -1403,7 +1529,7 @@ packages:
       name: shared_preferences_android
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "2.0.12"
+    version: "2.0.13"
   shared_preferences_ios:
     dependency: transitive
     description:
@@ -1485,7 +1611,7 @@ packages:
       name: source_span
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.8.2"
+    version: "1.9.0"
   sqflite:
     dependency: transitive
     description:
@@ -1527,28 +1653,28 @@ packages:
       name: string_scanner
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   synchronized:
     dependency: transitive
     description:
       name: synchronized
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.0.0+2"
+    version: "3.0.0+3"
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.0"
+    version: "1.2.1"
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.9"
+    version: "0.4.12"
   text_scroll:
     dependency: "direct main"
     description:
@@ -1597,7 +1723,7 @@ packages:
       name: url_launcher_android
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "6.0.17"
+    version: "6.0.18"
   url_launcher_ios:
     dependency: transitive
     description:
@@ -1809,5 +1935,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.17.6 <3.0.0"
-  flutter: ">=3.0.1"
+  dart: ">=2.18.0 <3.0.0"
+  flutter: ">=3.3.0"

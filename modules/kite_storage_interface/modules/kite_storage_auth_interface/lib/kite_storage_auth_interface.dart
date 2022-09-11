@@ -18,4 +18,6 @@ abstract class AuthStorageDao {
 
   /// 设置用户姓名
   set personName(String? foo);
+
+  DateTime? lastLogin;
 }
