@@ -1,5 +1,4 @@
-name: kite_storage_kite_interface
-
+name: kite_storage_auth_interface
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
@@ -8,7 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  kite_user_entity: { path: ../kite_user_entity }
 
 dev_dependencies:
   flutter_test:

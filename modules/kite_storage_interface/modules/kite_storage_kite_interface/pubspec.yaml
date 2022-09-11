@@ -1,0 +1,16 @@
+name: kite_storage_kite_interface
+
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  kite_user_entity: { path: ../../../kite_user_entity }
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

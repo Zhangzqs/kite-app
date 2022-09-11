@@ -1,3 +1,5 @@
+library kite_session;
+
 /*
  * 上应小风筝  便利校园，一步到位
  * Copyright (C) 2022 上海应用技术大学 上应小风筝团队
@@ -18,25 +20,34 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:kite/common/entity/kite_user.dart';
-import 'package:kite/storage/dao/kite.dart';
-import 'package:kite/storage/init.dart';
-import 'package:kite_util/kite_util.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
+import 'package:kite_storage_auth_interface/kite_storage_auth_interface.dart';
+import 'package:kite_storage_jwt_interface/kite_storage_jwt_interface.dart';
+import 'package:kite_storage_kite_interface/kite_storage_kite_interface.dart';
+import 'package:kite_user_entity/kite_user_entity.dart';
+import 'package:kite_util_logger/kite_util_logger.dart';
 
 const String _baseUrl = 'https://kite.sunnysab.cn/api/v2';
 
 class KiteSession implements ISession {
   final Dio dio;
+
+  /// 用于存储jwt字符串
   final JwtDao jwtDao;
+
+  /// 用于存储登录后的用户信息
   final KiteStorageDao kiteDao;
 
-  KiteSession(
-    this.dio,
-    this.jwtDao,
-    this.kiteDao,
-  );
+  /// 用于读取oa账户密码
+  final AuthStorageDao authDao;
+
+  KiteSession({
+    required this.dio,
+    required this.jwtDao,
+    required this.kiteDao,
+    required this.authDao,
+  });
 
   Future<Response> _dioRequest(
     String url,
@@ -64,8 +75,8 @@ class KiteSession implements ISession {
     } on KiteApiError catch (e) {
       if (e.code == 100) {
         await login(
-          KvStorageInitializer.auth.currentUsername!,
-          KvStorageInitializer.auth.ssoPassword!,
+          authDao.currentUsername!,
+          authDao.ssoPassword!,
         );
       }
       return await normallyRequest();

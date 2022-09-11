@@ -1,0 +1,25 @@
+name: kite_session
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  kite_storage_kite_interface: { path: ../kite_storage_interface/modules/kite_storage_kite_interface }
+  kite_storage_jwt_interface: { path: ../kite_storage_interface/modules/kite_storage_jwt_interface }
+  kite_storage_auth_interface: { path: ../kite_storage_interface/modules/kite_storage_auth_interface }
+
+  kite_request_interface: { path: ../kite_request_interface }
+  kite_user_entity: { path: ../kite_user_entity }
+  kite_request_dio_adapter: { path: ../kite_request_dio_adapter }
+  kite_util_logger: { path: ../kite_util_logger }
+
+  dio: ^4.0.4
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
