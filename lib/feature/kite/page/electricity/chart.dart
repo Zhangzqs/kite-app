@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:kite/component/chart.dart';
 
 import '../../../../component/future_builder.dart';
@@ -52,9 +53,9 @@ class _ChartSectionState extends State<ChartSection> {
           }),
           child: Row(
             children: [
-              Text('过去一天', style: TextStyle(fontSize: 20, color: isShowDays ? Colors.grey : Colors.blue)),
+              Text('最近24小时', style: TextStyle(fontSize: 20, color: isShowDays ? Colors.grey : Colors.blue)),
               const Text(' / ', style: TextStyle(fontSize: 20, color: Colors.black)),
-              Text('过去一周', style: TextStyle(fontSize: 20, color: isShowDays ? Colors.blue : Colors.grey))
+              Text('最近7天', style: TextStyle(fontSize: 20, color: isShowDays ? Colors.blue : Colors.grey))
             ],
           ),
         ),
@@ -64,10 +65,12 @@ class _ChartSectionState extends State<ChartSection> {
 
   Widget _buildView({List<HourlyBill>? hour, List<DailyBill>? day}) {
     List<double> list = [0];
+    List<double>? timeList;
     if (hour != null) {
       list = hour.map((e) => e.consumption.toStringAsFixed(2)).map((e) => double.parse(e)).toList();
+      timeList = hour.map((e) => DateFormat('HH').format(e.time)).map((e) => double.parse(e)).toList();
+      print(timeList.toString());
     }
-    ;
     if (day != null) {
       list = day.map((e) => e.consumption.toStringAsFixed(2)).map((e) => double.parse(e)).toList();
     }
@@ -77,7 +80,12 @@ class _ChartSectionState extends State<ChartSection> {
         AspectRatio(
           aspectRatio: 1.70,
           child: Padding(
-              padding: const EdgeInsets.only(right: 24, left: 24, top: 0, bottom: 0), child: ExpenseChart(list)),
+              padding: const EdgeInsets.only(right: 24, left: 24, top: 0, bottom: 0),
+              child: ExpenseChart(
+                list,
+                xAxis: timeList,
+                isZero: hour != null,
+              )),
         ),
         _buildModeSelector(),
       ],

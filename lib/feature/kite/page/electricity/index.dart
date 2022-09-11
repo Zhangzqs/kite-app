@@ -17,7 +17,6 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kite/feature/kite/page/electricity/rank.dart';
 
 import '../../init.dart';
 import 'balance.dart';
@@ -123,11 +122,6 @@ class _ElectricityPageState extends State<ElectricityPage> {
         ),
         ElevatedButton(
           style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.amber)),
-          onPressed: () => onReady(3),
-          child: const Text('排行榜'),
-        ),
-        ElevatedButton(
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.amber)),
           onPressed: () => onReady(2),
           child: const Text('使用情况'),
         )
@@ -155,9 +149,7 @@ class _ElectricityPageState extends State<ElectricityPage> {
     if (showType == 2) {
       return _buildResultBody(ChartSection(room));
     }
-    if (showType == 3) {
-      return _buildResultBody(RankView(room));
-    }
+
     return const Center();
   }
 

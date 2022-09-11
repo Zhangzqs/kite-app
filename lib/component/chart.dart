@@ -19,16 +19,29 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseChart extends StatelessWidget {
+  List<double>? xAxis;
   final List<double> dailyExpense;
-
-  const ExpenseChart(this.dailyExpense, {Key? key}) : super(key: key);
+  bool? isZero;
+  ExpenseChart(this.dailyExpense, {Key? key, this.isZero, this.xAxis}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final primaryColor = Theme.of(context).primaryColor;
 
     final expenseMapping = dailyExpense.asMap();
-    final spots = expenseMapping.keys.map((i) => FlSpot((i + 1).toDouble(), expenseMapping[i] ?? 0.0)).toList();
+
+    List<FlSpot> spots;
+    spots = expenseMapping.keys.map((i) => FlSpot(xAxis![i], expenseMapping[i] ?? 0.0)).toList();
+    if (isZero != null && isZero == true) {
+      spots = expenseMapping.keys.map((i) => FlSpot(xAxis?[i] ?? (i).toDouble(), expenseMapping[i] ?? 0.0)).toList();
+    } else {
+      spots =
+          expenseMapping.keys.map((i) => FlSpot(xAxis?[i] ?? (i + 1).toDouble(), expenseMapping[i] ?? 0.0)).toList();
+    }
+
+    if (xAxis != null) {
+      spots = expenseMapping.keys.map((i) => FlSpot(xAxis![i], expenseMapping[i] ?? 0.0)).toList();
+    }
 
     return LineChart(
       LineChartData(

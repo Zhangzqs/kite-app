@@ -59,7 +59,7 @@ class BalanceSection extends StatelessWidget {
             Text('剩余电量: ${balance.power.toStringAsFixed(2)}'),
             Container(
               margin: const EdgeInsets.only(top: 5),
-              child: Text('更新时间: ${DateFormat('yyyy-MM-dd hh:mm').format(balance.ts.toLocal())}',
+              child: Text('更新时间: ${DateFormat('yyyy-MM-dd HH:mm').format(balance.ts.toLocal())}',
                   style: Theme.of(context).textTheme.bodyText2),
             ),
           ],
