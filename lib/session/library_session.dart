@@ -20,11 +20,11 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';
-import 'package:kite/exception/session.dart';
 import 'package:kite/util/dio_utils.dart';
-import 'package:kite_util/kite_util.dart';
+import 'package:kite_exception/kite_exception.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
+import 'package:kite_util/kite_util.dart';
 
 class LibrarySession extends DefaultDioSession {
   static const _opacUrl = 'http://210.35.66.106/opac';

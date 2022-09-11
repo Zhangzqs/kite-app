@@ -19,8 +19,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kite/exception/session.dart';
 import 'package:kite/storage/init.dart';
+import 'package:kite_exception/kite_exception.dart';
 
 import '../entity/index.dart';
 import '../init.dart';

@@ -907,6 +907,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  kite_exception:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_exception"
+      relative: true
+    source: path
+    version: "0.0.1"
   kite_request_dio_adapter:
     dependency: "direct main"
     description:
@@ -920,35 +927,35 @@ packages:
       path: "modules/kite_request_interface"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   kite_util:
     dependency: "direct main"
     description:
       path: "modules/kite_util"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   kite_util_launcher:
     dependency: transitive
     description:
       path: "modules/kite_util_launcher"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   kite_util_logger:
     dependency: transitive
     description:
       path: "modules/kite_util_logger"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   kite_util_rule:
     dependency: transitive
     description:
       path: "modules/kite_util_rule"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   lint:
     dependency: transitive
     description:

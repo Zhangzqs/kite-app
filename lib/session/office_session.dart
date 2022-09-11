@@ -19,7 +19,9 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
-import 'package:kite/exception/session.dart';
+import 'package:kite/feature/office/init.dart';
+import 'package:kite/storage/init.dart';
+import 'package:kite_exception/kite_exception.dart';
 import 'package:kite_request_dio_adapter/kite_request_dio_adapter.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
 
@@ -74,6 +76,15 @@ class OfficeSession extends ISession {
     MyProgressCallback? onSendProgress,
     MyProgressCallback? onReceiveProgress,
   }) async {
+    if (!OfficeInitializer.session.isLogin) {
+      final username = KvStorageInitializer.auth.currentUsername!;
+      final password = KvStorageInitializer.auth.ssoPassword!;
+      await OfficeInitializer.session.login(
+        username: username,
+        password: password,
+      );
+    }
+
     Options newOptions = options?.toDioOptions() ?? Options();
 
     // Make default options.

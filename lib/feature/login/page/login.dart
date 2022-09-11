@@ -19,12 +19,12 @@ import 'package:flash/flash.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kite/exception/session.dart';
 import 'package:kite/launch.dart';
 import 'package:kite/route.dart';
 import 'package:kite/storage/init.dart';
 import 'package:kite/util/flash.dart';
 import 'package:kite/util/validation.dart';
+import 'package:kite_exception/kite_exception.dart';
 
 import '../init.dart';
 

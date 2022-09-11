@@ -16,7 +16,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:flutter/material.dart';
-import 'package:kite/exception/session.dart';
 import 'package:kite/feature/office/init.dart';
 import 'package:kite/global/global.dart';
 import 'package:kite/storage/init.dart';
@@ -54,28 +53,17 @@ class _OfficeItemState extends State<OfficeItem> {
   }
 
   Future<String> _buildContent() async {
-    final username = KvStorageInitializer.auth.currentUsername!;
-    final password = KvStorageInitializer.auth.ssoPassword!;
-
-    if (!OfficeInitializer.session.isLogin) {
-      try {
-        await OfficeInitializer.session.login(
-          username: username,
-          password: password,
-        );
-      } on CredentialsInvalidException catch (e) {
-        return e.msg;
-      } catch (e) {
-        return e.runtimeType.toString();
-      }
-    }
     format(s, x) => x > 0 ? '$s ($x)' : '';
-    final totalMessage = await OfficeInitializer.messageService.queryMessageCount();
-    final draftBlock = format('草稿', totalMessage.inDraft);
-    final doingBlock = format('在办', totalMessage.inProgress);
-    final completedBlock = format('完成', totalMessage.completed);
+    try {
+      final totalMessage = await OfficeInitializer.messageService.queryMessageCount();
+      final draftBlock = format('草稿', totalMessage.inDraft);
+      final doingBlock = format('在办', totalMessage.inProgress);
+      final completedBlock = format('完成', totalMessage.completed);
 
-    return '$draftBlock $doingBlock $completedBlock'.trim();
+      return '$draftBlock $doingBlock $completedBlock'.trim();
+    } catch (e) {
+      return e.toString();
+    }
   }
 
   @override
