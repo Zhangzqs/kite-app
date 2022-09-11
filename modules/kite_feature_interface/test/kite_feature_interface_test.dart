@@ -12,6 +12,12 @@ class A extends AKiteFeature {
   void onInit() {
     registerFeature(B(this));
     registerFeature(C(this));
+    topic.subscribeTopicMessage(
+      topic: 'topic1',
+      callback: (KiteMessage message) {
+        print(message);
+      },
+    );
     super.onInit();
   }
 }
@@ -31,6 +37,13 @@ class C extends AKiteFeature {
   @override
   void onInit() {
     registerFeature(D(this));
+    topic.subscribeTopicMessage(
+      topic: 'topic1',
+      callback: (KiteMessage message) {
+        print(message);
+      },
+    );
+    super.onInit();
   }
 }
 
@@ -50,9 +63,10 @@ void main() {
       Log.info(element.path);
     });
 
-    a.sendMessage('C', 123);
-    a.sendMessage('/A', 123);
-    a.sendMessage('*', 123);
+    a.topic.getTopicMessageSender('C').send(topic: 'topic1', data: 123);
+    a.topic.getTopicMessageSender('/A').send(topic: 'topic1', data: 123);
+    a.topic.getTopicMessageSender('*').send(topic: 'topic1', data: 123);
+
     print(a.findFeatureByPath('/A/**'));
   });
 }

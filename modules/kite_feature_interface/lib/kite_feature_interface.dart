@@ -1,13 +1,12 @@
 library kite_feature_interface;
 
-import 'package:flutter/widgets.dart';
+import 'dart:collection';
+
 import 'package:kite_util_logger/kite_util_logger.dart';
 
-abstract class IRouteGenerator {
-  // 判定该路由生成器是否能够生成指定路由名的路由
-  bool accept(String routeName);
-  WidgetBuilder onGenerateRoute(String routeName, Map<String, dynamic> arguments);
-}
+part 'kite_parameter.dart';
+part 'kite_service.dart';
+part 'kite_topic.dart';
 
 abstract class AKiteFeature {
   static void _iterate(AKiteFeature feature, bool? Function(AKiteFeature) m) {
@@ -26,40 +25,19 @@ abstract class AKiteFeature {
   /// 模块名称
   String get name;
 
-  /// 路由生成器
-  IRouteGenerator get routeGenerator {
-    throw UnsupportedError('Feature $name unsupported to generate route');
-  }
-
   /// 当模块初始化时
   /// parent 表示根Feature节点
   /// 当parent为 null 时，表示根节点
   void onInit() {
+    // 递归初始化
     for (final e in childrenRecursively.values) {
       e.onInit();
     }
   }
 
-  /// 当模块收到消息时
-  void onReceiveMessage(KiteMessage message) {
-    Log.info('Feature $name receive: $message');
-  }
-
-  void sendMessage<T>(String receiver, [T? data]) {
-    final targets = findFeatureByPath(receiver);
-    if (targets.isEmpty) {
-      Log.warn('No receiver at path: $receiver');
-      return;
-    }
-    for (final target in targets) {
-      final message = KiteMessage(
-        sender: path,
-        receiver: receiver,
-        data: data,
-      );
-      target.onReceiveMessage(message);
-    }
-  }
+  late FeatureService service = FeatureService(this);
+  late FeatureTopic topic = FeatureTopic(this);
+  late FeatureParameterList parameterList = FeatureParameterList(this);
 
   final Map<String, AKiteFeature> _features = {};
 
@@ -158,26 +136,5 @@ abstract class AKiteFeature {
   @override
   String toString() {
     return 'KiteFeature-$name';
-  }
-}
-
-class KiteMessage<T> {
-  /// 发送者
-  String sender = '';
-
-  /// 若为空，则为广播消息
-  String? receiver;
-
-  T? data;
-
-  KiteMessage({
-    required this.sender,
-    this.receiver,
-    this.data,
-  });
-
-  @override
-  String toString() {
-    return 'KiteMessage{sender: $sender, receiver: $receiver, data: $data}';
   }
 }
