@@ -15,7 +15,7 @@ class A extends AKiteFeature {
     topic.subscribeTopicMessage(
       topic: 'topic1',
       callback: (KiteMessage message) {
-        print(message);
+        print("A receive: $message");
       },
     );
     super.onInit();
@@ -40,7 +40,13 @@ class C extends AKiteFeature {
     topic.subscribeTopicMessage(
       topic: 'topic1',
       callback: (KiteMessage message) {
-        print(message);
+        print("C receive: $message");
+      },
+    );
+    service.bindService(
+      serviceName: 'service1',
+      serviceCallback: ([List<dynamic>? args]) {
+        return args![0] + args[1];
       },
     );
     super.onInit();
@@ -63,10 +69,15 @@ void main() {
       Log.info(element.path);
     });
 
-    a.topic.getTopicMessageSender('C').send(topic: 'topic1', data: 123);
-    a.topic.getTopicMessageSender('/A').send(topic: 'topic1', data: 123);
-    a.topic.getTopicMessageSender('*').send(topic: 'topic1', data: 123);
+    final broadcastSender = a.topic.getTopicMessageSender('/A/**');
+    print('Broadcast Receiver: ${broadcastSender.features}');
+    broadcastSender.send(topic: 'topic1', data: 1234);
 
-    print(a.findFeatureByPath('/A/**'));
+    final cSender = a.topic.getTopicMessageSender('C');
+    cSender.send(topic: 'topic1', data: 123);
+
+    final s1 = a.service.getService(featurePath: '/A/C', serviceName: 'service1');
+    final s1Result = s1([1, 2]);
+    Log.info('s1 result: $s1Result');
   });
 }

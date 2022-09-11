@@ -46,11 +46,19 @@ abstract class AKiteFeature {
     AKiteFeature result = this;
     if (pathElements[0].isEmpty) {
       // 绝对路径
-      AKiteFeature root = findRoot();
-      if (pathElements[1] != root.name) {
-        throw Exception('Root feature is not equal actual: ${root.name} expect: ${pathElements[0]}');
+      result = findRoot();
+      if (pathElements.length == 2) {
+        if (['*', result.name].contains(pathElements[1])) {
+          return {result};
+        } else if ('**' == pathElements[1]) {
+          return {
+            result,
+            ...result.childrenRecursively.values,
+          };
+        } else {
+          return {};
+        }
       }
-      result = root;
       pathElements = pathElements.sublist(2);
     }
     for (int i = 0; i < pathElements.length; i++) {
@@ -91,7 +99,7 @@ abstract class AKiteFeature {
   Map<String, AKiteFeature> get children => _features;
   void registerFeature(AKiteFeature feature) {
     if (children.containsKey(feature.name)) {
-      throw Exception('尝试注册一个重复的Feature: ${feature.name} 在 ${feature.parent?.name} 上');
+      throw Exception('尝试注册一个重复的Feature: ${feature.name} 在 ${feature.parent?.name ?? 'root'} 上');
     }
     _features[feature.name] = feature;
     Log.info('成功注册 Feature: ${feature.name} 在 ${feature.parent?.name} 上');
@@ -99,10 +107,10 @@ abstract class AKiteFeature {
 
   void unregisterFeature(AKiteFeature feature) {
     if (!children.containsKey(feature.name)) {
-      throw Exception('尝试取消注册一个未注册的Feature: ${feature.name} 在 ${feature.parent?.name} 上');
+      throw Exception('尝试取消注册一个未注册的Feature: ${feature.name} 在 ${feature.parent?.name ?? 'root'} 上');
     }
     _features.remove(feature.name);
-    Log.info('成功卸载 Feature: ${feature.name} 在 ${feature.parent?.name} 上');
+    Log.info('成功卸载 Feature: ${feature.name} 在 ${feature.parent?.name ?? 'root'} 上');
   }
 
   AKiteFeature findRoot() {

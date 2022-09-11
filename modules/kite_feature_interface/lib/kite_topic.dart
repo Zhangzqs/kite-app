@@ -48,7 +48,7 @@ class TopicMessageSender {
       if (callback != null) {
         // 通知订阅者的回调传递该消息
         callback(message);
-        if (!onlyOnce) return;
+        if (onlyOnce) return;
       }
     }
   }
