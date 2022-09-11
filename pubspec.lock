@@ -941,7 +941,7 @@ packages:
       path: "modules/kite_hive_type_id_pool"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.0"
   kite_ocr:
     dependency: "direct main"
     description:
