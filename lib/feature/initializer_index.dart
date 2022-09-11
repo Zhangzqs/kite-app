@@ -17,6 +17,7 @@
  */
 
 import 'package:kite/util/hive_register_adapter.dart';
+import 'package:kite_feature_weather/kite_feature_weather.dart';
 
 import 'contact/entity/contact.dart';
 import 'edu/timetable/entity.dart';
@@ -54,6 +55,7 @@ void registerAdapters() {
   registerAdapter(GameRecordAdapter());
   registerAdapter(FunctionTypeAdapter());
   registerAdapter(BalanceAdapter());
+  registerAdapter(WeatherAdapter());
   registerAdapter(ReportHistoryAdapter());
   registerAdapter(LibrarySearchHistoryItemAdapter());
   registerAdapter(UserEventAdapter());
