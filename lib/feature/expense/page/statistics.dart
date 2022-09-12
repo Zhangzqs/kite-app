@@ -145,7 +145,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
             ),
             // const SizedBox(height: 5),
             Center(
-              child: SizedBox(height: width * 0.5, width: width, child: ExpenseChart(daysAmount)),
+              child: SizedBox(height: width * 0.5, width: width, child: MyLineChart(daysAmount)),
             ),
             const SizedBox(height: 25),
           ],

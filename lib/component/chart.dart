@@ -18,11 +18,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class ExpenseChart extends StatelessWidget {
+class MyLineChart extends StatelessWidget {
   List<double>? xAxis;
   final List<double> dailyExpense;
   bool? isZero;
-  ExpenseChart(this.dailyExpense, {Key? key, this.isZero, this.xAxis}) : super(key: key);
+  MyLineChart(this.dailyExpense, {Key? key, this.isZero, this.xAxis}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

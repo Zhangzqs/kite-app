@@ -81,7 +81,7 @@ class _ChartSectionState extends State<ChartSection> {
           aspectRatio: 1.70,
           child: Padding(
               padding: const EdgeInsets.only(right: 24, left: 24, top: 0, bottom: 0),
-              child: ExpenseChart(
+              child: MyLineChart(
                 list,
                 xAxis: timeList,
                 isZero: hour != null,
