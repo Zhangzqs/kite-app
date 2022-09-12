@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  kite_util_logger: { path: ../kite_util_logger }
+  kite_util_logger: { path: ../kite_util/modules/kite_util_logger }
 
 dev_dependencies:
   flutter_test:
