@@ -134,7 +134,7 @@ dependencies:
 
   kite_feature_route_table: { path: modules/kite_feature_route_table }
   kite_feature_welcome: {path: modules/kite_feature/modules/kite_feature_welcome }
-
+  kite_component: { path: modules/kite_component }
 
 dev_dependencies:
   flutter_test: { sdk: flutter }
