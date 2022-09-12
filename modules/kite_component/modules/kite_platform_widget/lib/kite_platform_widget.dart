@@ -1,15 +1,11 @@
+library kite_platform_widget;
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:universal_platform/universal_platform.dart';
 
-/// 平台相关的组件封装
-///
-///
-///
-///
-///
-class MyPlatformWidget extends StatelessWidget {
+class KitePlatformWidget extends StatelessWidget {
   final WidgetBuilder? desktopOrWebBuilder;
   final WidgetBuilder? desktopBuilder;
   final WidgetBuilder? mobileBuilder;
@@ -21,7 +17,7 @@ class MyPlatformWidget extends StatelessWidget {
   final WidgetBuilder? webBuilder;
   final WidgetBuilder? fuchsiaBuilder;
   final WidgetBuilder? otherBuilder;
-  const MyPlatformWidget({
+  const KitePlatformWidget({
     Key? key,
     this.desktopOrWebBuilder,
     this.desktopBuilder,

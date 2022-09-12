@@ -1,4 +1,5 @@
-name: kite_component
+name: kite_platform_widget
+
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
@@ -7,8 +8,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  kite_future_builder: { path: modules/kite_future_builder }
-  kite_platform_widget: { path: modules/kite_platform_widget }
+  universal_platform: ^1.0.0+1  # dart.io.Platform API for Web
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

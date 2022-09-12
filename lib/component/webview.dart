@@ -20,8 +20,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:kite/component/future_builder.dart';
-import 'package:kite/component/platform_widget.dart';
 import 'package:kite/util/url_launcher.dart';
+import 'package:kite_component/kite_component.dart';
 import 'package:kite_util/kite_util.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -211,7 +211,7 @@ class _MyWebViewState extends State<MyWebView> {
 
   @override
   Widget build(BuildContext context) {
-    return MyPlatformWidget(
+    return KitePlatformWidget(
       desktopOrWebBuilder: (context) {
         return UnsupportedPlatformUrlLauncher(
           widget.initialUrl ?? '',
