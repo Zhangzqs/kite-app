@@ -122,13 +122,6 @@ dependencies:
 
   kite_session: { path: modules/kite_session }
   kite_user_entity: { path: modules/kite_user_entity }
-  kite_sit_edu_session: { path: modules/kite_sit_edu_session }
-  kite_sit_app_session: { path: modules/kite_sit_app_session }
-  kite_sit_library_session: { path: modules/kite_sit_library_session }
-  kite_sit_office_session: { path: modules/kite_sit_office_session }
-  kite_sit_report_session: { path: modules/kite_sit_report_session }
-  kite_sit_sc_session: { path: modules/kite_sit_sc_session }
-  kite_sit_sso_session: { path: modules/kite_sit_sso_session }
   kite_feature_weather: { path: modules/kite_feature/modules/kite_feature_weather }
   kite_hive_type_id_pool: { path: modules/kite_hive_type_id_pool }
 

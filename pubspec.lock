@@ -914,6 +914,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.4.7"
+  kite_component:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_component"
+      relative: true
+    source: path
+    version: "0.0.0"
   kite_event_bus:
     dependency: "direct main"
     description:
@@ -928,10 +935,31 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  kite_feature_route_table:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_feature_route_table"
+      relative: true
+    source: path
+    version: "0.0.1"
   kite_feature_weather:
     dependency: "direct main"
     description:
       path: "modules/kite_feature/modules/kite_feature_weather"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_feature_welcome:
+    dependency: "direct main"
+    description:
+      path: "modules/kite_feature/modules/kite_feature_welcome"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_future_builder:
+    dependency: transitive
+    description:
+      path: "modules/kite_component/modules/kite_future_builder"
       relative: true
     source: path
     version: "0.0.0"
@@ -942,10 +970,24 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
+  kite_kite_session:
+    dependency: transitive
+    description:
+      path: "modules/kite_session/modules/kite_kite_session"
+      relative: true
+    source: path
+    version: "0.0.0"
   kite_ocr:
     dependency: "direct main"
     description:
       path: "modules/kite_ocr"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_platform_widget:
+    dependency: transitive
+    description:
+      path: "modules/kite_component/modules/kite_platform_widget"
       relative: true
     source: path
     version: "0.0.0"
@@ -970,52 +1012,59 @@ packages:
       relative: true
     source: path
     version: "0.0.0"
-  kite_sit_app_session:
-    dependency: "direct main"
+  kite_session_common:
+    dependency: transitive
     description:
-      path: "modules/kite_sit_app_session"
+      path: "modules/kite_session/modules/kite_session_common"
+      relative: true
+    source: path
+    version: "0.0.0"
+  kite_sit_app_session:
+    dependency: transitive
+    description:
+      path: "modules/kite_session/modules/kite_sit_app_session"
       relative: true
     source: path
     version: "0.0.0"
   kite_sit_edu_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "modules/kite_sit_edu_session"
+      path: "modules/kite_session/modules/kite_sit_edu_session"
       relative: true
     source: path
     version: "0.0.0"
   kite_sit_library_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "modules/kite_sit_library_session"
+      path: "modules/kite_session/modules/kite_sit_library_session"
       relative: true
     source: path
     version: "0.0.0"
   kite_sit_office_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "modules/kite_sit_office_session"
+      path: "modules/kite_session/modules/kite_sit_office_session"
       relative: true
     source: path
     version: "0.0.0"
   kite_sit_report_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "modules/kite_sit_report_session"
+      path: "modules/kite_session/modules/kite_sit_report_session"
       relative: true
     source: path
     version: "0.0.0"
   kite_sit_sc_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "modules/kite_sit_sc_session"
+      path: "modules/kite_session/modules/kite_sit_sc_session"
       relative: true
     source: path
     version: "0.0.0"
   kite_sit_sso_session:
-    dependency: "direct main"
+    dependency: transitive
     description:
-      path: "modules/kite_sit_sso_session"
+      path: "modules/kite_session/modules/kite_sit_sso_session"
       relative: true
     source: path
     version: "0.0.0"
@@ -1064,28 +1113,28 @@ packages:
   kite_util_dio:
     dependency: transitive
     description:
-      path: "modules/kite_util_dio"
+      path: "modules/kite_util/modules/kite_util_dio"
       relative: true
     source: path
     version: "0.0.0"
   kite_util_launcher:
     dependency: transitive
     description:
-      path: "modules/kite_util_launcher"
+      path: "modules/kite_util/modules/kite_util_launcher"
       relative: true
     source: path
     version: "0.0.0"
   kite_util_logger:
     dependency: transitive
     description:
-      path: "modules/kite_util_logger"
+      path: "modules/kite_util/modules/kite_util_logger"
       relative: true
     source: path
     version: "0.0.0"
   kite_util_rule:
     dependency: transitive
     description:
-      path: "modules/kite_util_rule"
+      path: "modules/kite_util/modules/kite_util_rule"
       relative: true
     source: path
     version: "0.0.0"

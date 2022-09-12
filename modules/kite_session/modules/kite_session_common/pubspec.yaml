@@ -1,0 +1,19 @@
+name: kite_session_common
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  kite_storage_interface: { path: ../../../kite_storage_interface }
+  kite_request_interface: { path: ../../../kite_request_interface }
+  kite_request_dio_adapter: { path: ../../../kite_request_dio_adapter }
+  kite_util: { path: ../../../kite_util }
+  kite_exception: { path: ../../../kite_exception }
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

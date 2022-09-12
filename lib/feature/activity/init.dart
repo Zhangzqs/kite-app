@@ -17,7 +17,7 @@
  */
 
 import 'package:kite_request_interface/kite_request_interface.dart';
-import 'package:kite_sit_sc_session/kite_sit_sc_session.dart';
+import 'package:kite_session/kite_session.dart';
 
 import 'dao/index.dart';
 import 'dao/list.dart';

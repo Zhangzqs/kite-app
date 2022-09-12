@@ -7,17 +7,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  kite_storage_kite_interface: { path: ../kite_storage_interface/modules/kite_storage_kite_interface }
-  kite_storage_jwt_interface: { path: ../kite_storage_interface/modules/kite_storage_jwt_interface }
-  kite_storage_auth_interface: { path: ../kite_storage_interface/modules/kite_storage_auth_interface }
-
-  kite_request_interface: { path: ../kite_request_interface }
-  kite_user_entity: { path: ../kite_user_entity }
-  kite_request_dio_adapter: { path: ../kite_request_dio_adapter }
-  kite_util: { path: ../kite_util }
-
-  dio: ^4.0.4
-
+  kite_sit_report_session: { path: modules/kite_sit_report_session }
+  kite_sit_office_session: { path: modules/kite_sit_office_session }
+  kite_sit_library_session: { path: modules/kite_sit_library_session }
+  kite_sit_app_session: { path: modules/kite_sit_app_session }
+  kite_sit_edu_session: { path: modules/kite_sit_edu_session }
+  kite_sit_sso_session: { path: modules/kite_sit_sso_session }
+  kite_kite_session: { path: modules/kite_kite_session }
+  kite_sit_sc_session: { path: modules/kite_sit_sc_session }
 
 dev_dependencies:
   flutter_test:
