@@ -70,7 +70,7 @@ class _ConnectivityPageState extends State<ConnectivityPage> {
           String ip = '获取中…';
           String studentId = '获取中…';
           if (snapshot.connectionState == ConnectionState.done) {
-            final info = snapshot.data! as CheckStatusResult;
+            final info = snapshot.data!;
             ip = info.ip;
             studentId = info.uid ?? '未登录';
           }

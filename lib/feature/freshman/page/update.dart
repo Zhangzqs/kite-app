@@ -99,7 +99,7 @@ class _FreshmanUpdatePageState extends State<FreshmanUpdatePage> {
         title: const Text('隐私安全'),
       ),
       body: MyFutureBuilder<FreshmanInfo>(
-        future: freshmanDao.getInfo(),
+        futureGetter: () => freshmanDao.getInfo(),
         builder: (context, data) {
           makeInitialState(data);
           return Padding(

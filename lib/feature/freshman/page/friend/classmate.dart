@@ -44,7 +44,7 @@ class _ClassmateWidgetState extends State<ClassmateWidget> {
   @override
   Widget build(BuildContext context) {
     return MyFutureBuilder<List<Mate>>(
-      future: freshmanDao.getClassmates(),
+      futureGetter: () => freshmanDao.getClassmates(),
       builder: (context, data) {
         return MateListWidget(
           data,

@@ -18,11 +18,7 @@
 
 import 'dart:async';
 
-import 'package:catcher/catcher.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:kite/route.dart';
-import 'package:kite_feature_route_table/kite_feature_route_table.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 typedef MyWidgetBuilder<T> = Widget Function(BuildContext context, T data);
@@ -35,7 +31,6 @@ class MyFutureBuilderController<T> {
 }
 
 class MyFutureBuilder<T> extends StatefulWidget {
-  final Future<T>? future;
   final MyWidgetBuilder<T>? builder;
   final MyWidgetBuilder? onErrorBuilder;
   final MyFutureBuilderController? controller;
@@ -54,14 +49,13 @@ class MyFutureBuilder<T> extends StatefulWidget {
 
   const MyFutureBuilder({
     Key? key,
-    this.future,
     required this.builder,
     this.onErrorBuilder,
     this.controller,
     this.enablePullRefresh = false,
     this.onPreRefresh,
     this.onPostRefresh,
-    this.futureGetter,
+    required this.futureGetter,
   }) : super(key: key);
 
   @override
@@ -83,27 +77,6 @@ class _MyFutureBuilderState<T> extends State<MyFutureBuilder<T>> {
 
   Widget buildWhenError(error, stackTrace) {
     if (!completer.isCompleted) completer.completeError(error, stackTrace);
-    // 单独处理网络连接错误，且不上报
-    if (error is DioError && [DioErrorType.connectTimeout, DioErrorType.other].contains((error).type)) {
-      return Center(
-        child: Column(
-          children: [
-            const Text('网络连接超时，请检查是否连接到校园网环境(也有可能学校临时维护服务器，请以网页登录结果为准)'),
-            ElevatedButton(
-              onPressed: () => Navigator.of(context).pushReplacementNamed(RouteTable.connectivity),
-              child: const Text('进入网络工具检查'),
-            ),
-            if (widget.futureGetter != null)
-              TextButton(
-                onPressed: refresh,
-                child: const Text('刷新页面'),
-              ),
-          ],
-        ),
-      );
-    }
-
-    Catcher.reportCheckedError(error, stackTrace);
 
     if (widget.onErrorBuilder != null) widget.onErrorBuilder!(context, error);
 
@@ -130,9 +103,6 @@ class _MyFutureBuilderState<T> extends State<MyFutureBuilder<T>> {
   Future<T> fetchData() async {
     if (widget.futureGetter != null) {
       return await widget.futureGetter!();
-    }
-    if (widget.future != null) {
-      return await widget.future!;
     }
     throw UnsupportedError('MyFutureBuilder must set a future or futureGetter');
   }

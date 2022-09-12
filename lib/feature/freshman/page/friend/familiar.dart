@@ -57,7 +57,7 @@ class _FamiliarPeopleWidgetState extends State<FamiliarPeopleWidget> {
   @override
   Widget build(BuildContext context) {
     return MyFutureBuilder<List<Familiar>>(
-      future: freshmanDao.getFamiliars(),
+      futureGetter: () => freshmanDao.getFamiliars(),
       builder: (context, data) {
         return buildBody(data);
       },

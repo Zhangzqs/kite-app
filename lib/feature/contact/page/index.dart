@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import 'package:flutter/material.dart';
+import 'package:kite/component/future_builder.dart';
 
 import '../entity/contact.dart';
 import '../init.dart';
@@ -46,16 +47,11 @@ class _ContactPageState extends State<ContactPage> {
       return ContactList(_contactData);
     }
 
-    return FutureBuilder<List<ContactData>>(
-      future: _fetchContactList(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          _contactData.addAll(snapshot.data!);
-          return ContactList(_contactData);
-        } else if (snapshot.hasError) {
-          return Center(child: Text(snapshot.error.toString()));
-        }
-        return const Center(child: CircularProgressIndicator());
+    return MyFutureBuilder<List<ContactData>>(
+      futureGetter: () => _fetchContactList(),
+      builder: (context, data) {
+        _contactData.addAll(data);
+        return ContactList(_contactData);
       },
     );
   }

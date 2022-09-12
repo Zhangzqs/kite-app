@@ -18,6 +18,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:kite/component/future_builder.dart';
 import 'package:kite/util/flash.dart';
 import 'package:kite/util/url_launcher.dart';
 
@@ -126,14 +127,12 @@ class DetailPage extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context) {
-    return FutureBuilder<ActivityDetail>(
-        future: ScInitializer.scActivityDetailService.getActivityDetail(activityId),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return _buildDetail(context, snapshot.data!);
-          }
-          return const Center(child: CircularProgressIndicator());
-        });
+    return MyFutureBuilder<ActivityDetail>(
+      futureGetter: () => ScInitializer.scActivityDetailService.getActivityDetail(activityId),
+      builder: (context, data) {
+        return _buildDetail(context, data);
+      },
+    );
   }
 
   Future<void> _sendRequest(BuildContext context, bool force) async {

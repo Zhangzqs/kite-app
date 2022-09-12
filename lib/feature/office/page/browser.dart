@@ -42,7 +42,8 @@ class BrowserPage extends StatelessWidget {
           tip: '电脑端请连接校园网后在下方的浏览器中启动网页版',
         ),
         otherBuilder: (context) => MyFutureBuilder<List<WebViewCookie>>(
-          future: OfficeInitializer.cookieJar.loadAsWebViewCookie(Uri.parse('http://xgfy.sit.edu.cn/unifri-flow/')),
+          futureGetter: () =>
+              OfficeInitializer.cookieJar.loadAsWebViewCookie(Uri.parse('http://xgfy.sit.edu.cn/unifri-flow/')),
           builder: (context, data) {
             print(data);
             return WebView(

@@ -50,7 +50,7 @@ class AboutPage extends StatelessWidget {
       ),
       body: MyFutureBuilder<Response<String>>(
         controller: controller,
-        future: Dio().get(_aboutUrl),
+        futureGetter: () => Dio().get(_aboutUrl),
         builder: (ctx, data) {
           return MyHtmlWidget(data.data.toString());
         },

@@ -164,7 +164,7 @@ class _DebugStoragePageState extends State<DebugStoragePage> {
       _buildBoxSection<dynamic>(context, 'userEvent'),
     ];
     return MyFutureBuilder<List<Widget>>(
-      future: Future.wait(futures),
+      futureGetter: () => Future.wait(futures),
       builder: (context, data) {
         return Column(
           children: data,

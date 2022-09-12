@@ -17,6 +17,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:kite/component/future_builder.dart';
 
 import '../../entity/list.dart';
 import '../../init.dart';
@@ -38,19 +39,10 @@ class SearchBar extends SearchDelegate<String> {
   }
 
   Widget _buildSearch() {
-    final future = ScInitializer.scActivityListService.query(query);
-
-    return FutureBuilder<List<Activity>>(
-      future: future,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasData) {
-            return _buildEventResult(snapshot.data!);
-          } else if (snapshot.hasError) {
-            return Center(child: Text(snapshot.error.toString()));
-          }
-        }
-        return const Center(child: CircularProgressIndicator());
+    return MyFutureBuilder<List<Activity>>(
+      futureGetter: () => ScInitializer.scActivityListService.query(query),
+      builder: (context, data) {
+        return _buildEventResult(data);
       },
     );
   }

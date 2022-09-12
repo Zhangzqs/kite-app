@@ -78,7 +78,7 @@ class _EventPageState extends State<EventPage> with SingleTickerProviderStateMix
 
   Widget _buildEventList(ActivityType type) {
     return MyFutureBuilder<List<Activity>>(
-      future: ScInitializer.scActivityListService.getActivityList(type, 1),
+      futureGetter: () => ScInitializer.scActivityListService.getActivityList(type, 1),
       builder: (context, data) {
         final result = data.where(_filterActivity).toList();
         return _buildEventResult(result);

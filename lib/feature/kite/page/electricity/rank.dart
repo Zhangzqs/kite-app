@@ -57,7 +57,7 @@ class RankView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyFutureBuilder<Rank>(
-      future: KiteInitializer.electricityService.getRank(room),
+      futureGetter: () => KiteInitializer.electricityService.getRank(room),
       builder: (context, data) {
         return _buildView(data);
       },

@@ -40,7 +40,7 @@ class _BookInfoPageState extends State<BookInfoPage> {
   Widget buildBookDetail() {
     final bookId = widget.bookImageHolding.book.bookId;
     return MyFutureBuilder<BookInfo>(
-      future: LibrarySearchInitializer.bookInfo.query(bookId),
+      futureGetter: () => LibrarySearchInitializer.bookInfo.query(bookId),
       builder: (BuildContext context, BookInfo data) {
         return Table(
           columnWidths: const {
@@ -117,7 +117,7 @@ class _BookInfoPageState extends State<BookInfoPage> {
     }
 
     return MyFutureBuilder<BookImageHolding>(
-      future: get(),
+      futureGetter: () => get(),
       builder: (BuildContext context, BookImageHolding data) {
         return InkWell(
           child: Card(
@@ -140,7 +140,7 @@ class _BookInfoPageState extends State<BookInfoPage> {
 
   Widget buildNearBooks(String bookId) {
     return MyFutureBuilder<List<String>>(
-      future: LibrarySearchInitializer.holdingInfo.searchNearBookIdList(bookId),
+      futureGetter: () => LibrarySearchInitializer.holdingInfo.searchNearBookIdList(bookId),
       builder: (BuildContext context, List<String> data) {
         return Column(
           children: data.sublist(0, 5).map((bookId) {

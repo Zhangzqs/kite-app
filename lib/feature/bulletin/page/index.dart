@@ -17,6 +17,7 @@
  */
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:kite/component/future_builder.dart';
 import 'package:kite_request_interface/kite_request_interface.dart';
 
 import '../entity.dart';
@@ -62,31 +63,21 @@ class BulletinPage extends StatelessWidget {
   }
 
   Widget _buildBulletinList() {
-    final future = _queryBulletinListInAllCategory(1);
+    return MyFutureBuilder<List<BulletinRecord>>(
+      futureGetter: () => _queryBulletinListInAllCategory(1),
+      builder: (context, data) {
+        final records = data;
+        _sortBulletinRecord(records);
 
-    return FutureBuilder<List<BulletinRecord>>(
-        future: future,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasData) {
-              final records = snapshot.data!;
-              _sortBulletinRecord(records);
-
-              final items = records
-                  .map((e) => Column(
-                        children: [
-                          _buildBulletinItem(context, e),
-                          const Divider(),
-                        ],
-                      ))
-                  .toList();
-              return SingleChildScrollView(child: Column(children: items));
-            } else if (snapshot.hasError) {
-              return Center(child: Text('错误类型: ${snapshot.error.runtimeType}'));
-            }
-          }
-          return const Center(child: CircularProgressIndicator());
-        });
+        final items = records
+            .map((e) => Column(children: [
+                  _buildBulletinItem(context, e),
+                  const Divider(),
+                ]))
+            .toList();
+        return SingleChildScrollView(child: Column(children: items));
+      },
+    );
   }
 
   @override

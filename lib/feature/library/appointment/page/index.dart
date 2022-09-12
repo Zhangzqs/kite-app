@@ -260,7 +260,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
 
   Widget buildAppointmentListByDate(DateTime date) {
     return MyFutureBuilder<List<PeriodStatusRecord>>(
-      future: service.getPeriodStatus(date),
+      futureGetter: () => service.getPeriodStatus(date),
       builder: (context, List<PeriodStatusRecord> periodStatusList) {
         return periodStatusList.isNotEmpty ? buildSelectList(periodStatusList) : buildEmptyList();
       },

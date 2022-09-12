@@ -135,7 +135,7 @@ class SearchBarDelegate extends SearchDelegate<String> {
             const SizedBox(height: 20),
             Text('大家都在搜', style: Theme.of(context).textTheme.bodyText1),
             MyFutureBuilder<HotSearch>(
-              future: LibrarySearchInitializer.hotSearchService.getHotSearch(),
+              futureGetter: () => LibrarySearchInitializer.hotSearchService.getHotSearch(),
               builder: (BuildContext context, data) {
                 return SuggestionItemView(
                   titleItems: data.recentMonth.map((e) => e.hotSearchWord).toList(),

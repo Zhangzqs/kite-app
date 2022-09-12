@@ -71,7 +71,7 @@ class BalanceSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyFutureBuilder<Balance>(
-      future: KiteInitializer.electricityService.getBalance(room),
+      futureGetter: () => KiteInitializer.electricityService.getBalance(room),
       builder: (context, data) {
         return _buildView(context, data);
       },

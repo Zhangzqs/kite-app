@@ -59,7 +59,7 @@ class _RoommateWidgetState extends State<RoommateWidget> {
   @override
   Widget build(BuildContext context) {
     return MyFutureBuilder<List<dynamic>>(
-      future: Future.wait([freshmanDao.getRoommates(), freshmanDao.getInfo()]),
+      futureGetter: () => Future.wait([freshmanDao.getRoommates(), freshmanDao.getInfo()]),
       builder: (context, data) {
         return buildBody(data[0], data[1]);
       },

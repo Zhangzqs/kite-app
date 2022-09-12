@@ -18,6 +18,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:kite/component/future_builder.dart';
 
 import '../../entity/classroom.dart';
 import '../../init.dart';
@@ -188,22 +189,11 @@ class _ClassroomPageState extends State<ClassroomPage> {
   Widget _buildBody() {
     final String selectedBuilding = (_campusIndex == 0 ? fengxianArea : xuhuiArea)[_buildingIndex];
 
-    return FutureBuilder<List<AvailableClassroom>>(
-      future: _getAvailRoomList(_campusIndex, _dayIndex),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.hasData) {
-            final rawResult = snapshot.data!;
-            List<AvailableClassroom> data = rawResult.where((e) => e.room.startsWith(selectedBuilding)).toList();
-
-            return _buildResult(data);
-          } else if (snapshot.hasError) {
-            return Center(child: Text(snapshot.error.runtimeType.toString()));
-          }
-        }
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+    return MyFutureBuilder<List<AvailableClassroom>>(
+      futureGetter: () => _getAvailRoomList(_campusIndex, _dayIndex),
+      builder: (context, rawResult) {
+        List<AvailableClassroom> data = rawResult.where((e) => e.room.startsWith(selectedBuilding)).toList();
+        return _buildResult(data);
       },
     );
   }

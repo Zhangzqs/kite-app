@@ -96,13 +96,13 @@ class _ChartSectionState extends State<ChartSection> {
   Widget build(BuildContext context) {
     if (isShowDays) {
       return MyFutureBuilder<List<DailyBill>>(
-          future: KiteInitializer.electricityService.getDailyBill(room),
+          futureGetter: () => KiteInitializer.electricityService.getDailyBill(room),
           builder: (context, data) {
             return _buildView(day: data);
           });
     }
     return MyFutureBuilder<List<HourlyBill>>(
-        future: KiteInitializer.electricityService.getHourlyBill(room),
+        futureGetter: () => KiteInitializer.electricityService.getHourlyBill(room),
         builder: (context, data) {
           return _buildView(hour: data);
         });

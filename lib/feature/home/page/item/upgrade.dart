@@ -38,10 +38,8 @@ class UpgradeItem extends StatelessWidget {
     if (UniversalPlatform.isDesktopOrWeb) {
       return const SizedBox(height: 0);
     }
-    final future = getUpdate();
-
     return FutureBuilder<AppVersion?>(
-      future: future,
+      future: getUpdate(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done && snapshot.hasData && snapshot.data != null) {
           return HomeFunctionButton(

@@ -223,7 +223,7 @@ class _MyWebViewState extends State<MyWebView> {
           return buildWebView(widget.initialCookies);
         }
         return MyFutureBuilder<List<WebViewCookie>>(
-          future: widget.initialAsyncCookies,
+          futureGetter: () => widget.initialAsyncCookies!,
           builder: (context, data) {
             return buildWebView([...widget.initialCookies, ...data]);
           },
